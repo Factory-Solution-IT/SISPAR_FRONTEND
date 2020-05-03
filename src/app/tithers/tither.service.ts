@@ -2,22 +2,23 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tither } from '../tither';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TitherService {
 
-  url = 'http://localhost:5000/api/tithers';
+  url = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getAllTithers(): Observable<Tither[]> {
-    return this.http.get<Tither[]>(this.url);
+    return this.http.get<Tither[]>(`${this.url}/api/tithers`);
   }
 
   getTitherById(idTither: string): Observable<Tither> {
-    const apiurl = '${this.url}/${idTither}';
+    const apiurl = `${this.url}/api/tithers/${idTither}`;
     return this.http.get<Tither>(apiurl);
   }
 }
