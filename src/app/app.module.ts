@@ -20,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
+import { TithersModule } from './tithers/tithers.module';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { MatNativeDateModule } from '@angular/material';
     MatToolbarModule,
     AppRoutingModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    TithersModule,
+    AppRoutingModule
   ],
   providers: [HttpClientModule, TitherService, MatDatepickerModule],
   bootstrap: [AppComponent]

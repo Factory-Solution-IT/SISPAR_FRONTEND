@@ -1,0 +1,30 @@
+
+
+
+<div class="container">
+  <br>
+
+  <h2>Dizimistas</h2>  
+  
+  <br><br>
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tither of tithers">
+        <th scope="row">{{ tither.id | slice:0:8 }}</th>
+        <td>{{ tither.name }}</td>
+        <td>{{ tither.cpf }}</td>
+        <td>{{ tither.address }}</td>
+      </tr>      
+    </tbody>
+  </table>
+</div>
+
