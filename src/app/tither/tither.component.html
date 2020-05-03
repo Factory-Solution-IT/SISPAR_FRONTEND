@@ -1,0 +1,174 @@
+<nav class="navbar navbar-expand-lg nav-dark bg-primary">
+
+  <div class="container">
+
+      <a class="navbar-brand h1 mb-0" href="#">SISPAR</a>
+
+  </div>
+
+</nav>
+
+<div class="container">
+  <mat-card>
+    <mat-toolbar color="accent">
+      <div align="center" style="color:white;text-align:right;">
+        SISPAR - Sistema Integrados para paróquias.
+      </div>
+    </mat-toolbar>
+    <br><br>
+    <mat-card-content>
+      <form [formGroup]="titherForm"(ngSubmit)="onFormSubmit(titherForm.value)">
+        <table>
+          <tr>
+
+              <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="NameTither" matTooltip="Informe o nome do Dízimista" matInput placeholder="Nome do dízimista" class="block">
+              </mat-form-field>
+
+              <mat-error>
+                <span *ngIf="!titherForm.get('NameTither').value && titherForm.get('NameTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="AddressTither" matTooltip="Informe o endereço do Dízimista" matInput placeholder="Endereço do Dízimista">
+              </mat-form-field>
+
+              <mat-error>
+                <span *ngIf="!titherForm.get('AddressTither').value && titherForm.get('AddressTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="DocumentTither" matTooltip="Informe o documento" matInput placeholder="Documento do Dízimista">
+              </mat-form-field>
+
+              <mat-error>
+                  <span *ngIf="!titherForm.get('DocumentTither').value && titherForm.get('DocumentTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="TelephoneTither" matTooltip="Informe o telefone" matInput placeholder="Telefone Dízimista">
+              </mat-form-field>
+
+              <mat-error>
+                  <span *ngIf="!titherForm.get('TelephoneTither').value && titherForm.get('TelephoneTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="CellphoneTither" matTooltip="Informe o número do celular" matInput placeholder="Celular Dízimista">
+              </mat-form-field>
+
+              <mat-error>
+                  <span *ngIf="!titherForm.get('CellphoneTither').value && titherForm.get('CellphoneTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <mat-radio-group aria-label="Selecione a opção">
+                  <mat-radio-button value="0">Solteiro</mat-radio-button>
+                  <mat-radio-button value="1">Casado</mat-radio-button>
+                </mat-radio-group>
+              </mat-form-field>
+
+              <mat-error>
+                  <span *ngIf="!titherForm.get('MatiralStatus').value && titherForm.get('MatiralStatus').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input matInput [matDatepicker]="myDatePicker" placeholder="Escolha a data">
+                <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+              </mat-form-field>
+
+              <mat-error>
+                  <span *ngIf="!titherForm.get('MarriageDateTither').value && titherForm.get('MarriageDateTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="SpouseNameTither" matTooltip="Informe o nome da esposa/marido" matInput placeholder="Nome da Esposa(Marido)">
+              </mat-form-field>
+
+              <mat-error>
+                <span *ngIf="!titherForm.get('SpouseNameTither').value && titherForm.get('SpouseNameTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+            <td class="tableTither block">
+
+              <mat-form-field class="demo-full-width block">
+                <input formControlName="BirthDateSpouseTither" matTooltip="Informe a data de nascimento da esposa/marido" matInput placeholder="Data de Aniversário da Esposa(Marido)">
+              </mat-form-field>
+
+              <mat-error>
+                <span *ngIf="!titherForm.get('BirthDateSpouseTither').value && titherForm.get('BirthDateSpouseTither').touched"></span>
+              </mat-error>
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td></td>
+            <td class="content-center">
+              <button type="submit" mat-raised-button color="accent" matTooltip="Clique no botão Enviar"
+            [disabled]="!titherForm.valid">Enviar</button>
+            <button type="reset" mat-raised-button color="accent" matTooltip="Clique no botão" (click)="resetForm()">Resetar</button>
+            </td>
+            <td>
+              <p *ngIf="dataSaved" style="color:rgb(55, 0, 128);font-size:20px;font-weight:bold" Class="success" align="left">
+               {{message}}
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <br><br>
+
+        <table class="table">
+          <tr ngclass="btn-primary">
+            <th class="tbl2">Nome do Dizimista</th>
+            <th class="tbl2">Endereço do Dizimista</th>
+            <th class="tbl2">Data de Nascimento do Dizimista</th>
+            <th class="tbl2">Documento</th>
+            <th class="tbl2">Telefone</th>
+            <th class="tbl2">Celular</th>
+            <th class="tbl2">Status</th>
+            <th class="tbl2">Data de Casamento</th>
+            <th class="tbl2">Nome do Marido/Esposa</th>
+            <th class="tbl2">Data de Nascimento do Conjuge</th>
+          </tr>
+        </table>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

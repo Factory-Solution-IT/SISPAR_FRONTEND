@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.text-center{
+  text-align:center!important;
+}
+
+/*This structure about form-signin */
+.form-signin{
+  width:100%;
+  max-width:330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.font-weight-normal{
+  font-weight: 400!important;
+}
+
+.mb3{
+  margin-bottom: 1rem!important;
+}
+
+.h3{
+  font-size: 1.75rem;
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form-signin input[type="email"]
+{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius:0;
+}
+
+label{
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+input[type=checkbox]{
+  box-sizing: border-box;
+  padding: 0;
+}
+

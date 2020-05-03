@@ -1,0 +1,31 @@
+.space{
+  display: block;
+  min-width: 30em;
+}
+
+.block{
+  display: block;
+  min-width: 10em;
+}
+
+.mat-radio-button ~ .mat-radio-button{
+  margin-left: 16px;
+}
+
+th, td{
+  text-align: center;
+}
+
+th{
+  background-color:#422956;
+  color:white;
+}
+
+.tbl1{
+  width:400px;
+}
+
+.tbl2{
+  width:400px;
+}
+
