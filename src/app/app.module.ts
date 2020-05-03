@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { TithersModule } from './tithers/tithers.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TithersModule } from './tithers/tithers.module';
     MatDatepickerModule,
     MatNativeDateModule,
     TithersModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [HttpClientModule, TitherService, MatDatepickerModule],
   bootstrap: [AppComponent]
