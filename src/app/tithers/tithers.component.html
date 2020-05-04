@@ -1,24 +1,121 @@
-
-
-
 <div class="container">
   <br>
 
-  <h2>Dizimistas</h2>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Dizimistas</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <br>
 
-  <a [routerLink]="['']">Home</a>
 
-  <br><br>
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a
+    [routerLink]="['']"
+    class="btn btn-outline-primary"
+  >
+    Home
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+  <button
+    type="button"
+    class="btn btn-outline-success"
+  >
+    Adicionar Dizimista
+  </button>
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <table class="table">
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
-        <th scope="col">Endereço</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +123,22 @@
         <th scope="row">{{ tither.id | slice:0:8 }}</th>
         <td>{{ tither.name }}</td>
         <td>{{ tither.cpf }}</td>
-        <td>{{ tither.address }}</td>
-      </tr>      
+        <td>{{ tither.cellphone }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-outline-info"
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+          >
+            Apagar
+          </button>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
-

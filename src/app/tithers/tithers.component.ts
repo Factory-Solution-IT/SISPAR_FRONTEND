@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TitherService } from './tither.service';
-import { Tither } from '../tither';
+import { Tither } from './tither';
 
 @Component({
   selector: 'app-tithers',
@@ -11,15 +11,13 @@ export class TithersComponent implements OnInit {
 
   tithers: Tither[] = [];
 
-  constructor(private titherSerice: TitherService ) { }
+  constructor(private titherSerice: TitherService) { }
 
   ngOnInit() {
 
-    this.titherSerice.getAllTithers().subscribe(data => { 
+    this.titherSerice.getAllTithers().subscribe(data => {
       console.log(data);
-      
-      this.tithers = data; 
+      this.tithers = data;
     });
   }
-
 }
