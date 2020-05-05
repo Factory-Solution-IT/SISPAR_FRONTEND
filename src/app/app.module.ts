@@ -3,9 +3,7 @@ import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { TitherComponent } from './tither/tither.component';
-import { TitherService } from './tither.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -20,13 +18,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
-import { TithersModule } from './tithers/tithers.module';
+import { TithersModule } from './tither/tithers/tithers.module';
 import { RouterModule } from '@angular/router';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     TitherComponent
   ],
   imports: [
@@ -50,9 +48,10 @@ import { RouterModule } from '@angular/router';
     MatNativeDateModule,
     TithersModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HomeModule
   ],
-  providers: [HttpClientModule, TitherService, MatDatepickerModule],
+  providers: [HttpClientModule, MatDatepickerModule],
   bootstrap: [AppComponent]
 
 })

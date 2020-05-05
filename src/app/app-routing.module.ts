@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TithersComponent } from './tithers/tithers.component';
 import { HomeComponent } from './pages/home/home.component';
+import { TitherComponent } from './tither/tither.component';
+import { TithersComponent } from './tither/tithers/tithers.component';
+import { AddTitherComponent } from './tither/add-tither/add-tither.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'tithers',
     component: TithersComponent,
+  },
+  {
+    path: 'add-tither',
+    component: AddTitherComponent,
+  },
+  {
+    path: 'tither',
+    component: TitherComponent,
   }
 ];
 

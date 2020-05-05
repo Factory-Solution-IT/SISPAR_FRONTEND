@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TithersComponent } from './tithers.component';
+import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [TithersComponent],
+  declarations: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule 
   ]
 })
-export class TithersModule { }
+export class HomeModule { }

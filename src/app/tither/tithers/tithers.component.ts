@@ -14,7 +14,10 @@ export class TithersComponent implements OnInit {
   constructor(private titherSerice: TitherService) { }
 
   ngOnInit() {
+    this.getTithers();
+  }
 
+  getTithers(){
     this.titherSerice.getAllTithers().subscribe(data => {
       console.log(data);
       this.tithers = data;

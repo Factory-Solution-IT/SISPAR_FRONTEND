@@ -2,7 +2,7 @@
 
   <div class="container">
 
-      <a class="navbar-brand h1 mb-0" href="#">SISPAR</a>
+    <a class="navbar-brand h1 mb-0" href="#">SISPAR</a>
 
   </div>
 
@@ -17,14 +17,15 @@
     </mat-toolbar>
     <br><br>
     <mat-card-content>
-      <form [formGroup]="titherForm"(ngSubmit)="onFormSubmit(titherForm.value)">
+      <form [formGroup]="titherForm" (ngSubmit)="onFormSubmit(titherForm.value)">
         <table>
           <tr>
 
-              <td class="tableTither block">
+            <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="NameTither" matTooltip="Informe o nome do Dízimista" matInput placeholder="Nome do dízimista" class="block">
+                <input formControlName="NameTither" matTooltip="Informe o nome do Dízimista" matInput
+                  placeholder="Nome do dízimista" class="block">
               </mat-form-field>
 
               <mat-error>
@@ -36,7 +37,8 @@
             <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="AddressTither" matTooltip="Informe o endereço do Dízimista" matInput placeholder="Endereço do Dízimista">
+                <input formControlName="AddressTither" matTooltip="Informe o endereço do Dízimista" matInput
+                  placeholder="Endereço do Dízimista">
               </mat-form-field>
 
               <mat-error>
@@ -48,11 +50,13 @@
             <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="DocumentTither" matTooltip="Informe o documento" matInput placeholder="Documento do Dízimista">
+                <input formControlName="DocumentTither" matTooltip="Informe o documento" matInput
+                  placeholder="Documento do Dízimista">
               </mat-form-field>
 
               <mat-error>
-                  <span *ngIf="!titherForm.get('DocumentTither').value && titherForm.get('DocumentTither').touched"></span>
+                <span
+                  *ngIf="!titherForm.get('DocumentTither').value && titherForm.get('DocumentTither').touched"></span>
               </mat-error>
 
             </td>
@@ -60,11 +64,13 @@
             <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="TelephoneTither" matTooltip="Informe o telefone" matInput placeholder="Telefone Dízimista">
+                <input formControlName="TelephoneTither" matTooltip="Informe o telefone" matInput
+                  placeholder="Telefone Dízimista">
               </mat-form-field>
 
               <mat-error>
-                  <span *ngIf="!titherForm.get('TelephoneTither').value && titherForm.get('TelephoneTither').touched"></span>
+                <span
+                  *ngIf="!titherForm.get('TelephoneTither').value && titherForm.get('TelephoneTither').touched"></span>
               </mat-error>
 
             </td>
@@ -72,11 +78,13 @@
             <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="CellphoneTither" matTooltip="Informe o número do celular" matInput placeholder="Celular Dízimista">
+                <input formControlName="CellphoneTither" matTooltip="Informe o número do celular" matInput
+                  placeholder="Celular Dízimista">
               </mat-form-field>
 
               <mat-error>
-                  <span *ngIf="!titherForm.get('CellphoneTither').value && titherForm.get('CellphoneTither').touched"></span>
+                <span
+                  *ngIf="!titherForm.get('CellphoneTither').value && titherForm.get('CellphoneTither').touched"></span>
               </mat-error>
 
             </td>
@@ -91,7 +99,7 @@
               </mat-form-field>
 
               <mat-error>
-                  <span *ngIf="!titherForm.get('MatiralStatus').value && titherForm.get('MatiralStatus').touched"></span>
+                <span *ngIf="!titherForm.get('MatiralStatus').value && titherForm.get('MatiralStatus').touched"></span>
               </mat-error>
 
             </td>
@@ -105,7 +113,8 @@
               </mat-form-field>
 
               <mat-error>
-                  <span *ngIf="!titherForm.get('MarriageDateTither').value && titherForm.get('MarriageDateTither').touched"></span>
+                <span
+                  *ngIf="!titherForm.get('MarriageDateTither').value && titherForm.get('MarriageDateTither').touched"></span>
               </mat-error>
 
             </td>
@@ -113,11 +122,13 @@
             <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="SpouseNameTither" matTooltip="Informe o nome da esposa/marido" matInput placeholder="Nome da Esposa(Marido)">
+                <input formControlName="SpouseNameTither" matTooltip="Informe o nome da esposa/marido" matInput
+                  placeholder="Nome da Esposa(Marido)">
               </mat-form-field>
 
               <mat-error>
-                <span *ngIf="!titherForm.get('SpouseNameTither').value && titherForm.get('SpouseNameTither').touched"></span>
+                <span
+                  *ngIf="!titherForm.get('SpouseNameTither').value && titherForm.get('SpouseNameTither').touched"></span>
               </mat-error>
 
             </td>
@@ -125,11 +136,14 @@
             <td class="tableTither block">
 
               <mat-form-field class="demo-full-width block">
-                <input formControlName="BirthDateSpouseTither" matTooltip="Informe a data de nascimento da esposa/marido" matInput placeholder="Data de Aniversário da Esposa(Marido)">
+                <input formControlName="BirthDateSpouseTither"
+                  matTooltip="Informe a data de nascimento da esposa/marido" matInput
+                  placeholder="Data de Aniversário da Esposa(Marido)">
               </mat-form-field>
 
               <mat-error>
-                <span *ngIf="!titherForm.get('BirthDateSpouseTither').value && titherForm.get('BirthDateSpouseTither').touched"></span>
+                <span
+                  *ngIf="!titherForm.get('BirthDateSpouseTither').value && titherForm.get('BirthDateSpouseTither').touched"></span>
               </mat-error>
 
             </td>
@@ -140,12 +154,14 @@
             <td></td>
             <td class="content-center">
               <button type="submit" mat-raised-button color="accent" matTooltip="Clique no botão Enviar"
-            [disabled]="!titherForm.valid">Enviar</button>
-            <button type="reset" mat-raised-button color="accent" matTooltip="Clique no botão" (click)="resetForm()">Resetar</button>
+                [disabled]="!titherForm.valid">Enviar</button>
+              <button type="reset" mat-raised-button color="accent" matTooltip="Clique no botão"
+                (click)="resetForm()">Resetar</button>
             </td>
             <td>
-              <p *ngIf="dataSaved" style="color:rgb(55, 0, 128);font-size:20px;font-weight:bold" Class="success" align="left">
-               {{message}}
+              <p *ngIf="dataSaved" style="color:rgb(55, 0, 128);font-size:20px;font-weight:bold" Class="success"
+                align="left">
+                {{message}}
               </p>
             </td>
           </tr>
@@ -171,4 +187,3 @@
     </mat-card-content>
   </mat-card>
 </div>
-

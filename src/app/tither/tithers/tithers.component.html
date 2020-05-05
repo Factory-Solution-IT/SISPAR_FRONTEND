@@ -1,32 +1,21 @@
 <div class="container">
-  <br>
 
+  <br>
 
   <h2>Dizimistas</h2>
 
-
   <br>
 
-
-  <a
-    [routerLink]="['']"
-    class="btn btn-outline-primary"
-  >
+  <a [routerLink]="['']" class="btn btn-outline-primary">
     Home
   </a>
 
-
-  <button
-    type="button"
-    class="btn btn-outline-success"
-  >
+  <a [routerLink]="['/add-tither']" class="btn btn-outline-success">
     Adicionar Dizimista
-  </button>
-
+  </a>
 
   <br>
   <br>
-
 
   <table class="table">
     <thead class="thead-light">
@@ -45,16 +34,10 @@
         <td>{{ tither.cpf }}</td>
         <td>{{ tither.cellphone }}</td>
         <td>
-          <button
-            type="button"
-            class="btn btn-outline-info"
-          >
+          <button type="button" class="btn btn-outline-info">
             Editar
           </button>
-          <button
-            type="button"
-            class="btn btn-outline-danger"
-          >
+          <button type="button" class="btn btn-outline-danger">
             Apagar
           </button>
         </td>
