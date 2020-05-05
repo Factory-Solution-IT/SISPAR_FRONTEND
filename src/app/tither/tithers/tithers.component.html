@@ -34,9 +34,9 @@
         <td>{{ tither.cpf }}</td>
         <td>{{ tither.cellphone }}</td>
         <td>
-          <button type="button" class="btn btn-outline-info">
+          <a [routerLink]="['/edit-tither']" class="btn btn-outline-info">
             Editar
-          </button>
+          </a>
           <button type="button" class="btn btn-outline-danger">
             Apagar
           </button>

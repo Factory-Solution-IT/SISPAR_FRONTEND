@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TitherComponent } from './tither/tither.component';
 import { TithersComponent } from './tither/tithers/tithers.component';
 import { AddTitherComponent } from './tither/add-tither/add-tither.component';
+import { EditTitherComponent } from './tither/edit-tither/edit-tither.component';
 
 const routes: Routes = [
   {
@@ -24,8 +25,8 @@ const routes: Routes = [
     component: AddTitherComponent,
   },
   {
-    path: 'tither',
-    component: TitherComponent,
+    path: 'edit-tither',
+    component: EditTitherComponent,
   }
 ];
 

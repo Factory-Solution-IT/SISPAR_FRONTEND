@@ -3,7 +3,6 @@ import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TitherComponent } from './tither/tither.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,8 +23,7 @@ import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TitherComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
