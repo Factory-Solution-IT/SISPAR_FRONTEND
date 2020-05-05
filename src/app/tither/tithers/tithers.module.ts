@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AddTitherModule } from '../add-tither/add-tither.module';
 import { EditTitherModule } from '../edit-tither/edit-tither.module';
 import { DeleteTitherModule } from '../delete-tither/delete-tither.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DeleteTitherModule } from '../delete-tither/delete-tither.module';
     RouterModule,
     AddTitherModule,
     EditTitherModule,
-    DeleteTitherModule
+    DeleteTitherModule,
+    HttpClientModule
   ]
 })
 export class TithersModule { }
