@@ -19,7 +19,6 @@ export class TithersComponent implements OnInit {
 
   getTithers(){
     this.titherSerice.getAllTithers().subscribe(data => {
-      console.log(data);
       this.tithers = data;
     });
   }
