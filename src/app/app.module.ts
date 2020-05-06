@@ -8,6 +8,7 @@ import { TithersModule } from './tither/tithers/tithers.module';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
