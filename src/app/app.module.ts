@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { TithersModule } from './tither/tithers/tithers.module';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { HomeModule } from './pages/home/home.module';
     TithersModule,
     AppRoutingModule,
     RouterModule,
-    HomeModule
+    HomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
