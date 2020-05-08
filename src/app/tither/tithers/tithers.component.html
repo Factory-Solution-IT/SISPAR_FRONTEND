@@ -6,11 +6,11 @@
 
   <br>
 
-  <a [routerLink]="['']" class="btn btn-outline-primary">
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-undo"></i>
     Home
   </a>
 
-  <a [routerLink]="['/add-tither']" class="btn btn-outline-success">
+  <a [routerLink]="['/add-tither']" class="btn btn-outline-success"><i class="fas fa-plus-circle"></i>
     Adicionar Dizimista
   </a>
 
@@ -35,9 +35,11 @@
         <td>{{ tither.cellphone }}</td>
         <td>
           <a [routerLink]="['/edit-tither']" class="btn btn-outline-info">
+            <i class="fas fa-edit"></i>
             Editar
           </a>
           <a [routerLink]="['/delete-tither']" class="btn btn-outline-danger">
+            <i class="fas fa-trash-alt"></i>
             Apagar
           </a>
         </td>

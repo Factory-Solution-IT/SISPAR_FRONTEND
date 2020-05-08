@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup} from '../../node_modules/@angular/forms';
+import { FormBuilder} from '../../node_modules/@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,4 @@ import { FormBuilder, FormGroup} from '../../node_modules/@angular/forms';
 
 export class AppComponent {
   title = 'SisparWeb';
-  public form: FormGroup;
 }
