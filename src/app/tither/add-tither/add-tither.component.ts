@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-tither',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-tither.component.css']
 })
 export class AddTitherComponent implements OnInit {
+  public form: FormGroup;
 
   constructor() { }
 

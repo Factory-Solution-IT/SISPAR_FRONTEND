@@ -5,12 +5,23 @@
 
   <br>
 
-  <a [routerLink]="['']" class="btn btn-outline-primary">
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
     Home
   </a>
 
   <a [routerLink]="['/tithers']" class="btn btn-outline-success">
+    <i class="fas fa-list"></i>
     Lista Dizimistas
   </a>
+
+  <br>
+  <br>
+
+
+  <form [formGroup]="form">
+      <label>Name: </label>
+      <input type="text" maxlength="60">
+  </form>
+
 
 </div>
