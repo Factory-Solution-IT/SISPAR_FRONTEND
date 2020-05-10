@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Tither } from '../tithers/tither';
 import { TitherService } from '../tithers/tither.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-tither',
@@ -12,7 +13,7 @@ export class AddTitherComponent implements OnInit {
 
   addTitherform: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private titherService: TitherService) { }
+  constructor(private formBuilder: FormBuilder, private titherService: TitherService, private router: Router) { }
 
   ngOnInit() {
     this.addTitherform = this.formBuilder.group({
@@ -48,9 +49,9 @@ export class AddTitherComponent implements OnInit {
 
     this.titherService.postTither(tither).subscribe(data => {
       console.log(data);
+      this.router.navigate(['/tithers']);
     })
 
-    console.log(tither);    
   }
 
 }
