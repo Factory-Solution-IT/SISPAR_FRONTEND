@@ -1,7 +1,7 @@
 <div class="container">
 
   <nav class="nav">
-    <a class="nav-link" href="#">Sispar</a>
+    <a class="nav-link" href="#"><i class="fas fa-place-of-worship"></i> Sispar</a>
   </nav>
 
   <br>
@@ -10,8 +10,12 @@
 
   <br>
   <br>
+  <form [formGroup]="form">
+    <label>Acesso a tela do dizimista:</label>
+  </form>
 
-  <a [routerLink]="['/tithers']" class="btn btn-outline-primary">
+  <!-- <button [routerLink]="['/tithers']"><i class="fas fa-user-circle"></i> Dizimistas </button> -->
+  <a [routerLink]="['/tithers']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>
     Dizimistas
   </a>
 

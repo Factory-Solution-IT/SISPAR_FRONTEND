@@ -5,14 +5,26 @@
 
   <br>
 
-  <a [routerLink]="['']" class="btn btn-outline-primary">
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
     Home
   </a>
 
   <a [routerLink]="['/tithers']" class="btn btn-outline-success">
+    <i class="fas fa-list"></i>
     Lista Dizimistas
   </a>
 
+  <br>
+  <br>
+
+
+  <form [formGroup]="form">
+      <label>Name: </label>
+      <input type="text" maxlength="60">
+  </form>
+
+
+</div>
   <br><br>
 
   <form>
@@ -24,14 +36,14 @@
     </div>
     <div class="form-row">
       <div class="col">
-        <label for="inputAddress">Endere√ßo</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Endere√ßo">
+        <label for="inputAddress">EndereÁo</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="EndereÁo">
       </div>
     </div>
     <div class="form-row">
       <div class="col">
-        <label for="inputBirthDate">Data de Anivers√°rio</label>
-        <input type="date" class="form-control" id="inputBirthDate" placeholder="Data de Anivers√°rio">
+        <label for="inputBirthDate">Data de Anivers·rio</label>
+        <input type="date" class="form-control" id="inputBirthDate" placeholder="Data de Anivers·rio">
       </div>
       <div class="col">
         <label for="inputCPF">CPF</label>
