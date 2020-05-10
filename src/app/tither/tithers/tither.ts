@@ -6,7 +6,7 @@ export class Tither {
    cpf: string;
    telephone: string;
    cellphone: string;
-   matiralStatus: string;
+   matiralStatus: number;
    marriegeDate: Date;
    nameSpouse: string;
    dateBirthSpouse: Date;

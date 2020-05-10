@@ -21,4 +21,8 @@ export class TitherService {
     const apiurl = `${this.url}/api/tithers/${idTither}`;
     return this.http.get<Tither>(apiurl);
   }
+
+  postTither(tither: Tither): Observable<Tither> {
+    return this.http.post<Tither>(`${this.url}/api/tithers`, tither);
+  }
 }

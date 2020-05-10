@@ -1,4 +1,5 @@
 <div class="container">
+
   <br>
 
   <h2>Adicionar Dizimista</h2>
@@ -14,64 +15,56 @@
     Lista Dizimistas
   </a>
 
-  <br>
-  <br>
-
-
-  <form [formGroup]="form">
-      <label>Name: </label>
-      <input type="text" maxlength="60">
-  </form>
-
-
-</div>
+ 
   <br><br>
+  
+    
+  <form [formGroup]="addTitherform" (submit)="addTither()">
 
-  <form>
     <div class="form-row">
       <div class="col">
         <label for="inputName">Nome</label>
-        <input type="text" class="form-control" id="name" placeholder="Nome">
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nome">
       </div>
     </div>
     <div class="form-row">
       <div class="col">
-        <label for="inputAddress">EndereÁo</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="EndereÁo">
+        <label for="inputAddress">Endere√ßo</label>
+        <input type="text" formControlName="address" class="form-control" id="inputAddress" placeholder="Endere√ßo">
       </div>
     </div>
     <div class="form-row">
       <div class="col">
-        <label for="inputBirthDate">Data de Anivers·rio</label>
-        <input type="date" class="form-control" id="inputBirthDate" placeholder="Data de Anivers·rio">
+        <label for="inputBirthDate">Data de Anivers√°rio</label>
+        <input type="date" formControlName="birthDate" class="form-control" id="inputBirthDate" placeholder="Data de Anivers√°rio">
       </div>
       <div class="col">
         <label for="inputCPF">CPF</label>
-        <input type="text" class="form-control" id="inputCPF" placeholder="000.000.000-00">
+        <input type="text" formControlName="CPF" class="form-control" id="inputCPF" placeholder="000.000.000-00">
       </div>
       <div class="col">
         <label for="inputTelephone">Telefone</label>
-        <input type="text" class="form-control" id="inputTelephone" placeholder="(00) 0000-000">
+        <input type="text" formControlName="telephone" class="form-control" id="inputTelephone" placeholder="(00) 0000-000">
       </div>
       <div class="col">
         <label for="inputCellphone">Celular</label>
-        <input type="text" class="form-control" id="inputCellphone" placeholder="(00) 0.0000-000">
+        <input type="text" formControlName="cellphone" class="form-control" id="inputCellphone" placeholder="(00) 0.0000-000">
       </div>
     </div>
     <div class="form-row">
       <div class="col">
         <label for="inputNameSpouse">Nome Esposa(o)</label>
-        <input type="text" class="form-control" id="inputNameSpouse" placeholder="Nome Esposa(o)">
+        <input type="text" formControlName="nameSpouse" class="form-control" id="inputNameSpouse" placeholder="Nome Esposa(o)">
       </div>
     </div>
     <div class="form-row">
       <div class="col">
         <label for="inputMarriegeDate">Data de Casamento</label>
-        <input type="date" class="form-control" id="inputMarriegeDate" placeholder="Data de Casamento">
+        <input type="date" formControlName="marriegeDate" class="form-control" id="inputMarriegeDate" placeholder="Data de Casamento">
       </div>
       <div class="col">
         <label for="inputDateBirthSpouse">Data de Nascimento Esposa(o)</label>
-        <input type="date" class="form-control" id="inputDateBirthSpouse" placeholder="Data de Nascimento Esposa(o)">
+        <input type="date" formControlName="dateBirthSpouse" class="form-control" id="inputDateBirthSpouse" placeholder="Data de Nascimento Esposa(o)">
       </div>
       <div class="col">
       </div>
@@ -85,12 +78,12 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputMatiralStatus">Estado Civel</label>
-        <select id="inputMatiralStatus" class="form-control">
-          <option selected>Choose...</option>
-          <option value="1">Solteiro</option>
-          <option value="2">Casado</option>
-          <option value="3">Viuvo</option>
-          <option value="4">Divorciado</option>
+        <select formControlName="matiralStatus" id="inputMatiralStatus" class="form-control">
+          <option value=0 selected>Choose...</option>
+          <option value=1>Solteiro</option>
+          <option value=2>Casado</option>
+          <option value=3>Viuvo</option>
+          <option value=4>Divorciado</option>
         </select>
       </div>
       <div class="form-group col-md-2">
@@ -98,7 +91,8 @@
         <input type="text" class="form-control" id="inputZip">
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button class="btn btn-primary">Salvar</button>
+   
   </form>
 
 </div>

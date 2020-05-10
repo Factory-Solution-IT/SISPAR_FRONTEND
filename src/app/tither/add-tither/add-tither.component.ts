@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Tither } from '../tithers/tither';
+import { TitherService } from '../tithers/tither.service';
 
 @Component({
   selector: 'app-add-tither',
@@ -7,11 +9,48 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./add-tither.component.css']
 })
 export class AddTitherComponent implements OnInit {
-  public form: FormGroup;
 
-  constructor() { }
+  addTitherform: FormGroup;
+
+  constructor(private formBuilder: FormBuilder, private titherService: TitherService) { }
 
   ngOnInit() {
+    this.addTitherform = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      birthDate: ['', [Validators.required]],
+      CPF: ['', [Validators.required]],
+      telephone: ['', [Validators.required]],
+      cellphone: ['', [Validators.required]],
+      matiralStatus: [0, [Validators.required]],
+      marriegeDate: ['', [Validators.required]],
+      nameSpouse: ['', [Validators.required]],
+      dateBirthSpouse: ['', [Validators.required]]
+    });
+  }
+
+  addTither(){
+    const data = this.addTitherform.getRawValue();
+
+    const tither : Tither =  {
+      id: "",
+      name: data.name,
+      address: data.address,
+      birthDate: data.birthDate,
+      cpf: data.CPF,
+      telephone: data.telephone,
+      cellphone: data.cellphone,
+      matiralStatus: data.matiralStatus.getRawValue,
+      marriegeDate: data.marriegeDate,
+      nameSpouse: data.nameSpouse,
+      dateBirthSpouse: data.birthDate
+    };
+
+    this.titherService.postTither(tither).subscribe(data => {
+      console.log(data);
+    })
+
+    console.log(tither);    
   }
 
 }
