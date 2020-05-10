@@ -26,11 +26,11 @@ const routes: Routes = [
     component: AddTitherComponent,
   },
   {
-    path: 'edit-tither',
+    path: 'edit-tither/:titherId',
     component: EditTitherComponent,
   },
   {
-    path: 'delete-tither',
+    path: 'delete-tither/:titherId',
     component: DeleteTitherComponent,
   }
 ];

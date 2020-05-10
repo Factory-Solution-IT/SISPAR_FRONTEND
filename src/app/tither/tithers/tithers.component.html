@@ -34,11 +34,11 @@
         <td>{{ tither.cpf }}</td>
         <td>{{ tither.cellphone }}</td>
         <td>
-          <a [routerLink]="['/edit-tither']" class="btn btn-outline-info">
+          <a [routerLink]="['/edit-tither', tither.id]" class="btn btn-outline-info">
             <i class="fas fa-edit"></i>
             Editar
           </a>
-          <a [routerLink]="['/delete-tither']" class="btn btn-outline-danger">
+          <a [routerLink]="['/delete-tither', tither.id]" class="btn btn-outline-danger">
             <i class="fas fa-trash-alt"></i>
             Apagar
           </a>

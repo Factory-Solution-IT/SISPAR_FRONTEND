@@ -1,7 +1,7 @@
 <div class="container">
   <br>
 
-  <h2>Apagar Dizimista</h2>
+  <h2>Apagar Dizimista  {{ tither.name }}</h2>
 
   <br>
 
@@ -12,5 +12,16 @@
   <a [routerLink]="['/tithers']" class="btn btn-outline-success">
     Lista Dizimistas
   </a>
+
+  <br><br>
+
+  <h2>Confirma a exclusão do Dizimista {{ tither.name }} ?</h2>
+  <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="fas fa-cancel"></i>
+    Cancelar
+  </a>
+
+  <br>
+  
+  <button class="btn btn-outline-danger" (click)="deleteTither()">Sim, desejo cancelar!</button>
 
 </div>

@@ -25,4 +25,8 @@ export class TitherService {
   postTither(tither: Tither): Observable<Tither> {
     return this.http.post<Tither>(`${this.url}/api/tithers`, tither);
   }
+
+  deleteTither(idTither: string): Observable<Tither> {
+    return this.http.delete<Tither>(`${this.url}/api/tithers/${idTither}`);
+  }
 }
