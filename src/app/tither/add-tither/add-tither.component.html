@@ -14,10 +14,8 @@
     <i class="fas fa-list"></i>
     Lista Dizimistas
   </a>
-
  
-  <br><br>
-  
+  <br><br>  
     
   <form [formGroup]="addTitherform" (submit)="addTither()">
 
@@ -53,7 +51,7 @@
     </div>
     <div class="form-row">
       <div class="col">
-        <label for="inputMatiralStatus">Estado Civel</label>
+        <label for="inputMatiralStatus">Estado Civil</label>
         <select formControlName="matiralStatus" id="inputMatiralStatus" class="form-control">
           <option value=0 selected>Choose...</option>
           <option value=1>Solteiro</option>
@@ -63,6 +61,8 @@
         </select>
       </div>
       <div class="col">
+        <label for="inputMarriegeDate">Data de Casamento</label>
+        <input type="date" formControlName="marriegeDate" class="form-control" id="inputMarriegeDate" placeholder="Data de Casamento">
       </div>
       <div class="col">
       </div>
@@ -81,9 +81,7 @@
         <input type="date" formControlName="dateBirthSpouse" class="form-control" id="inputDateBirthSpouse" placeholder="Data de Nascimento Esposa(o)">
       </div>
       <div class="col">
-        <label for="inputMarriegeDate">Data de Casamento</label>
-        <input type="date" formControlName="marriegeDate" class="form-control" id="inputMarriegeDate" placeholder="Data de Casamento">
-      </div>
+       </div>
       <div class="col">
       </div>
       <div class="col">
