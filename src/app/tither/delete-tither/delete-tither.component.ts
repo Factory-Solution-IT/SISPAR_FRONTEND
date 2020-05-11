@@ -20,10 +20,10 @@ export class DeleteTitherComponent implements OnInit {
     this.titherId = this.activateRoute.snapshot.params.titherId;
 
     this.tither$ = this.titherService.getTitherById(this.titherId);
-    this.tither$.subscribe(() => {}, err => {
+    this.tither$.subscribe(() => { }, err => {
       console.log(err);
-     // this.router.navigate(['not-found']);
-  });
+      // this.router.navigate(['not-found']);
+    });
   }
 
   deleteTither() {

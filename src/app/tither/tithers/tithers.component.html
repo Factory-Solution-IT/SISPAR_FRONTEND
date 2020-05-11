@@ -27,7 +27,7 @@
         <th scope="col">Ações</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="(tithers$ | async) as tithers">
       <tr *ngFor="let tither of tithers">
         <th scope="row">{{ tither.id | slice:0:8 }}</th>
         <td>{{ tither.name }}</td>

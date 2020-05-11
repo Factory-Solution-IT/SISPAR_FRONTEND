@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TitherService } from './tither.service';
 import { Tither } from './tither';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tithers',
@@ -9,7 +10,7 @@ import { Tither } from './tither';
 })
 export class TithersComponent implements OnInit {
 
-  tithers: Tither[] = [];
+  tithers$: Observable<Tither[]>;// Tither[] = [];
 
   constructor(private titherSerice: TitherService) { }
 
@@ -17,9 +18,11 @@ export class TithersComponent implements OnInit {
     this.getTithers();
   }
 
-  getTithers(){
-    this.titherSerice.getAllTithers().subscribe(data => {
-      this.tithers = data;
+  getTithers() {
+    this.tithers$ = this.titherSerice.getAllTithers();
+    this.tithers$.subscribe(() => { }, err => {
+      console.log(err);
+      // this.router.navigate(['not-found']);
     });
   }
 }
