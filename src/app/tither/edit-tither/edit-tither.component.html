@@ -13,4 +13,12 @@
     Lista Dizimistas
   </a>
 
+  <br><br>
+
+  <div  *ngIf="(tither$ | async) as tither">
+
+
+    <input type="text" value="{{ tither.name }}">
+  </div>
+
 </div>
