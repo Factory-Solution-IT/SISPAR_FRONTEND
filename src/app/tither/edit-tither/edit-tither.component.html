@@ -32,19 +32,33 @@
       </div>
     </div>
 
-    <!--BirthDate Tither-->
     <div class="form-row">
+
+      <!--BirthDate Tither-->
       <div class="col">
         <label for="inputBirthDate">Data de Aniversário</label>
         <input type="date" formControlName="birthDate" class="form-control" value="{{ tither.birthDate }}">
       </div>
-    </div>
 
     <!--Document Tither-->
-    <div class="form-row">
       <div class="col">
         <label for="inputCPF">CPF</label>
         <input type="text" formControlName="CPF" class="form-control" value= "{{ tither.cpf }}">
       </div>
+
+      <!--Telephone Tither-->
+      <div class="col">
+        <label for="inputTelephone">Telefone</label>
+        <input type="text" formControl="telephone" class="form-control" value="{{ tither.telephone }}">
+      </div>
+
+      <div class="col">
+        <label for="inputCellphone">Celular</label>
+        <input type="text" formControl="cellphone" class="form-control" value="{{ tither.cellphone}}">
+      </div>
+    </div>
+
+    <!--FormRow for the matiral status-->
+
     </div>
 </div>
