@@ -59,6 +59,47 @@
     </div>
 
     <!--FormRow for the matiral status-->
-
+    <div class="form-row">
+      <div class="col">
+        <label for="inputMatiralStatus">Estado Civil</label>
+        <select formControlName="matiralStatus" value="{{ tither.matiralStatus }}" class="form-control">
+          <option value=0 selected>Choose...</option>
+          <option value=1>Solteiro</option>
+          <option value=2>Casado</option>
+          <option value=3>Viuvo</option>
+          <option value=4>Divorciado</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="inputMarriageDate">Data de Casamento</label>
+        <input type="date" formControlName="marriageDate" class="form-control" value="{{ tither.marriegeDate }}">
+      </div>
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
     </div>
+    <div class="form-row">
+      <div class="col">
+        <label for="inputNameSpouse">Nome Esposa(a)</label>
+        <input type="text" formControlName="nameSpouse" class="form-control" value="{{ tither.nameSpouse }}">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <label for="inputDateBirthSpouse">Data Nascimento Esposa(o)</label>
+        <input type="date" formControlName="dateBirthSpouse" class="form-control" value="{{ tither.dateBirthSpouse }}">
+     </div>
+     <div class="col">
+     </div>
+     <div class="col">
+     </div>
+     <div class="col">
+     </div>
+  </div>
+  <br>
+  <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
+    Cancelar
+  </a>
+  <button class="btn btn-outline-primary"><i class="far fa-save"></i> Salvar</button>
 </div>
