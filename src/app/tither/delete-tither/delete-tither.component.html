@@ -5,11 +5,11 @@
 
   <br>
 
-  <a [routerLink]="['']" class="btn btn-outline-primary">
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
     Home
   </a>
 
-  <a [routerLink]="['/tithers']" class="btn btn-outline-success">
+  <a [routerLink]="['/tithers']" class="btn btn-outline-success"><i class="fas fa-list"></i>
     Lista Dizimistas
   </a>
 
@@ -21,9 +21,9 @@
 
     <br>
 
-    <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="fas fa-cancel"></i>
+    <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
       Cancelar
     </a>
-    <button class="btn btn-outline-danger" (click)="deleteTither()">Sim, desejo cancelar!</button>
+    <button class="btn btn-outline-danger" (click)="deleteTither()"><i class="fas fa-user-times"></i> Sim, desejo excluir!</button>
   </div>
 </div>
