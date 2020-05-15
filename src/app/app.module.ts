@@ -9,7 +9,6 @@ import { RouterModule } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent
