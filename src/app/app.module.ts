@@ -1,3 +1,4 @@
+import { TitheModule } from './tithe/tithe.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     RouterModule,
     HomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TitheModule
   ],
   providers: [],
   bootstrap: [AppComponent]

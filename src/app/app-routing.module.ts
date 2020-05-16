@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-//import { TitherComponent } from './tither/tither.component';
 import { TithersComponent } from './tither/tithers/tithers.component';
 import { TitheComponent } from './tithe/tithe.component';
 import { AddTitherComponent } from './tither/add-tither/add-tither.component';
@@ -16,7 +15,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+  },
+  {
+    path: 'tithe',
+    pathMatch: 'full',
+    component: TitheComponent
   },
   {
     path: 'tithers',
@@ -32,29 +36,9 @@ const routes: Routes = [
   },
   {
     path: 'delete-tither/:titherId',
-    component: DeleteTitherComponent,
+    component: DeleteTitherComponent
   }
 ];
-
-/*const routesTithe: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'tithe',
-    component: TitheComponent,
-  },
-  {
-    path: 'delete-tither/:titherId',
-    component: DeleteTitherComponent,
-  }
-]*/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

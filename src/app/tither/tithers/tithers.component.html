@@ -34,6 +34,10 @@
         <td>{{ tither.cpf }}</td>
         <td>{{ tither.cellphone }}</td>
         <td>
+          <a [routerLink]="['/tithe']" class="btn btn-outline-primary">
+            <i class="fas fa-donate"></i>
+            Contribuir
+          </a>
           <a [routerLink]="['/edit-tither', tither.id]" class="btn btn-outline-info">
             <i class="fas fa-edit"></i>
             Editar
