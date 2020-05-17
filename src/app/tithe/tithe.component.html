@@ -6,6 +6,7 @@
   <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
     Home
   </a>
+
   <a [routerLink]="['/tithers']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>
     Dizimistas
   </a>
@@ -22,5 +23,12 @@
         <th scope="col">Ações</th>
       </tr>
     </thead>
+    <tbody *ngIf="(tithes$ | async) as tithes">
+      <tr *ngFor="let tithe of tithes">
+        <th scope="row">{{ tithe.id | slice:0:8 }} </th>
+        <td>{{ tithe.dateContribution }}</td>
+        <td>{{ tithe.valueContribution}}</td>
+      </tr>
+    </tbody>
   </table>
 </div>

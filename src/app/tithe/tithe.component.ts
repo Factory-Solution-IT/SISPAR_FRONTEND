@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TitheService } from './tithe.service';
+import { Observable } from 'rxjs';
+import { Tithe } from './tithe';
 
 @Component({
   selector: 'app-tithe',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitheComponent implements OnInit {
 
-  constructor() { }
+  tithes$: Observable<Tithe[]>;
+
+  constructor(private titheService: TitheService) { }
 
   ngOnInit() {
+    this.getTithes();
   }
 
+  getTithes() {
+    this.tithes$ = this.titheService.getAllTithes();
+    this.tithes$.subscribe(() => { }, err => {
+      console.log(err);
+    });
+  }
 }

@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   apiUrl: 'http://tekila1234-001-site1.ctempurl.com'
-  //apiUrl: 'http://localhost:5000'
 };
 
 /*

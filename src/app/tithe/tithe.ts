@@ -1,6 +1,5 @@
 export class Tithe {
   id: string;
-  idTither: string;
-  valueContribution: string;
+  valueContribution: number;
   dateContribution: Date;
 }
