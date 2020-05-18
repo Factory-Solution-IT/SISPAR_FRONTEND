@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TithersComponent } from './tither/tithers/tithers.component';
 import { TitheComponent } from './tithe/tithe.component';
 import { AddTitherComponent } from './tither/add-tither/add-tither.component';
+import { AddTitheComponent } from './tithe/add-tithe/add-tithe.component';
 import { EditTitherComponent } from './tither/edit-tither/edit-tither.component';
 import { DeleteTitherComponent } from './tither/delete-tither/delete-tither.component';
 
@@ -36,8 +37,12 @@ const routes: Routes = [
   },
   {
     path: 'delete-tither/:titherId',
-    component: DeleteTitherComponent
+    component: DeleteTitherComponent,
   }
+  //{
+  //  path: 'add-tithe',
+  //  component: AddTitheComponent
+  //}
 ];
 
 @NgModule({
