@@ -38,11 +38,11 @@ const routes: Routes = [
   {
     path: 'delete-tither/:titherId',
     component: DeleteTitherComponent,
+  },
+  {
+    path: 'add-tithe',
+    component: AddTitheComponent
   }
-  //{
-  //  path: 'add-tithe',
-  //  component: AddTitheComponent
-  //}
 ];
 
 @NgModule({
