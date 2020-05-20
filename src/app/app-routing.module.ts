@@ -6,6 +6,7 @@ import { TitheComponent } from './tithe/tithe.component';
 import { AddTitherComponent } from './tither/add-tither/add-tither.component';
 import { AddTitheComponent } from './tithe/add-tithe/add-tithe.component';
 import { EditTitherComponent } from './tither/edit-tither/edit-tither.component';
+import { EditTitheComponent } from './tithe/edit-tithe/edit-tithe.component';
 import { DeleteTitherComponent } from './tither/delete-tither/delete-tither.component';
 
 const routes: Routes = [
@@ -41,7 +42,11 @@ const routes: Routes = [
   },
   {
     path: 'add-tithe',
-    component: AddTitheComponent
+    component: AddTitheComponent,
+  },
+  {
+    path: 'edit-tithe',
+    component: EditTitheComponent
   }
 ];
 

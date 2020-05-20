@@ -31,6 +31,6 @@ export class TitheService {
 
   deleteTithe(idTithe: string): Observable<Tithe> {
     return this.http.delete<Tithe>(`${this.url}/api/tithes/${idTithe}`);
-     //return this.http.delete<Tithe>(`${this.url}/api/tithes/bytitherid/{titherId}`);
+    //return this.http.delete<Tithe>(`${this.url}/api/tithes/bytitherid/{titherId}`);
   }
 }
