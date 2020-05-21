@@ -7,7 +7,7 @@
     Home
   </a>
 
-  <a [routerLink]="['/add-tithe']" class="btn btn-outline-success"> <i class="fas fa-plus-circle"></i>
+  <a [routerLink]="['/add-tithe', titherId]" class="btn btn-outline-success"> <i class="fas fa-plus-circle"></i>
     Adicionar Contribuição
   </a>
 
@@ -30,8 +30,8 @@
     <tbody *ngIf="(tithes$ | async) as tithes">
       <tr *ngFor="let tithe of tithes">
         <th scope="row">{{ tithe.id | slice:0:8 }} </th>
-        <td>{{ tithe.contributionDate }}</td>
-        <td>{{ tithe.contributionValue }}</td>
+        <td>{{ tithe.dateContribution }}</td>
+        <td>{{ tithe.valueContribution }}</td>
         <td>
           <a [routerLink]="['edit-tithe']" class="btn btn-outline-info">
             <i class="fas fa-edit"></i>

@@ -20,7 +20,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'tithe',
+    path: 'tithe/:titherId',
     pathMatch: 'full',
     component: TitheComponent
   },
@@ -30,6 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'add-tither',
+    pathMatch: 'full',
     component: AddTitherComponent,
   },
   {
@@ -41,7 +42,8 @@ const routes: Routes = [
     component: DeleteTitherComponent,
   },
   {
-    path: 'add-tithe',
+    path: 'add-tithe/:titherId',
+    pathMatch: 'full',
     component: AddTitheComponent,
   },
   {

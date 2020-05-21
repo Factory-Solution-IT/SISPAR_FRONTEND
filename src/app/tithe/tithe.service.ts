@@ -24,6 +24,12 @@ export class TitheService {
     return this.http.get<Tithe[]>(apiUrl);
   }
 
+  getTithesByTitherId(titherId: string): Observable<Tithe[]> {
+    const apiUrl = `${this.url}/api/tithes/bytitherid/${titherId}`;
+    //const apiUrl = `${this.url}/api/tithes/bytitherid/{titherId}`;
+    return this.http.get<Tithe[]>(apiUrl);
+  }
+
   postTithe(tithe: Tithe): Observable<Tithe>{
     return this.http.post<Tithe>(`${this.url}/api/tithes`, tithe);
     //return this.http.post<Tithe>(`${this.url}/api/tithes/bytitherid/{titherId}`, tithe);

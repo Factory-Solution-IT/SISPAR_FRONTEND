@@ -10,14 +10,14 @@
     Home
   </a>
 
-  <a [routerLink]="['/tithe']" class="btn btn-outline-success">
+  <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-success">
     <i class="fas fa-list"></i>
       Lista de Contribuições
   </a>
 
   <br><br>
 
-  <form [formGroup]="addTitheform" submit="addTithe()">
+  <form [formGroup]="addTitheform" (submit)="addTithe()">
 
     <div class="form-row">
       <div class="col">
@@ -26,7 +26,7 @@
       </div>
       <div class="col">
         <label for="inputContributionDate">Data de Contribuição</label>
-        <input type="date" formControlName="contributionDate" class="form-control" id="inputcontributionDate" placeholder="Data de Contribuição">
+        <input type="date" formControlName="dateContribution" class="form-control" id="inputcontributionDate" placeholder="Data de Contribuição">
       </div>
     </div>
     <br>
