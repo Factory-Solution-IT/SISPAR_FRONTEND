@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,13 +8,16 @@ import { EditTitheModule } from './edit-tithe/edit-tithe.module';
 import { TitherModule } from '../tither/tither.module';
 
 @NgModule({
-  declarations: [TitheComponent],
+  declarations: [
+    TitheComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     AddTitheModule,
     EditTitheModule,
-    TitherModule
+    TitherModule,
+    HttpClientModule
   ]
 })
 export class TitheModule { }

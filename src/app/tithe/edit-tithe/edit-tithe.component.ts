@@ -1,4 +1,6 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { TitheService } from '../tithe.service';
 
 @Component({
   selector: 'app-edit-tithe',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditTitheComponent implements OnInit {
 
-  constructor() { }
+  thiterId: string;
+
+  constructor(private activateRoute: ActivatedRoute,
+    private titheService: TitheService,
+    private router: Router) { }
 
   ngOnInit() {
   }

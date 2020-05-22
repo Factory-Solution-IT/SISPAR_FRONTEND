@@ -47,7 +47,7 @@ const routes: Routes = [
     component: AddTitheComponent,
   },
   {
-    path: 'edit-tithe',
+    path: 'edit-tithe/:titherId',
     component: EditTitheComponent
   }
 ];

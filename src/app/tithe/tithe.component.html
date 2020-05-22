@@ -33,7 +33,7 @@
         <td>{{ tithe.dateContribution }}</td>
         <td>{{ tithe.valueContribution }}</td>
         <td>
-          <a [routerLink]="['edit-tithe']" class="btn btn-outline-info">
+          <a [routerLink]="['edit-tithe', titherId]" class="btn btn-outline-info">
             <i class="fas fa-edit"></i>
             Editar
           </a>
