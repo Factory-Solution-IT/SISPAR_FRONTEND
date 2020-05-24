@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { TitheComponent } from './../tithe.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditTitheComponent } from './edit-tithe.component';
@@ -9,7 +11,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class EditTitheModule { }

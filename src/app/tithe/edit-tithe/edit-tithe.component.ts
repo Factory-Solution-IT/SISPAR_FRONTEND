@@ -1,6 +1,8 @@
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TitheService } from '../tithe.service';
+import { Tithe } from '../tithe';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-tithe',
@@ -9,13 +11,24 @@ import { TitheService } from '../tithe.service';
 })
 export class EditTitheComponent implements OnInit {
 
-  thiterId: string;
+  titherId: string;
+  tithe$: Observable<Tithe>;
+  //titheId: string;
+  //tithe$: Observable<Tithe>;
 
   constructor(private activateRoute: ActivatedRoute,
     private titheService: TitheService,
     private router: Router) { }
 
   ngOnInit() {
+    this.titherId = this.activateRoute.snapshot.params.titherId;
+    //this.titheId = this.activateRoute.snapshot.params.titheId;
+    //this.tithe$ = this.titheService.getTithesById(this.titheId);
+    this.tithe$ = this.titheService.getTithesByTitherId(this.titherId);
+    this.tithe$.subscribe(() => { }, err => {
+      console.log(err);
+    });
+
   }
 
 }

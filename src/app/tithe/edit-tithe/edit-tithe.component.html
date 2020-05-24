@@ -1,3 +1,40 @@
-<p>
-  edit-tithe works!
-</p>
+<div class="container">
+
+  <br>
+
+    <h2>Editar Contribuição</h2>
+
+  <br>
+
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
+    Home
+  </a>
+
+  <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-success"><i class="fas fa-list"></i>
+    Lista Dizimistas
+  </a>
+
+  <br><br>
+
+  <div  *ngIf="(tithe$ | async) as tithe">
+
+    <div class="form-row">
+      <div class="col">
+        <label for="inputValueContribution">Valor da Contribuição</label>
+        <input type="text" formControlName="valueContribution" class="form-control" value="{{ tithe.valueContribution }}">
+      </div>
+
+      <div class="col">
+        <label for="inputDateContribution">Data da Contribuição</label>
+        <input type="date" formControlName="dateContribution" class="form-control" value="{{ tithe.dateContribution }}">
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
+    Cancelar
+  </a>
+  <button class="btn btn-outline-primary"><i class="far fa-save"></i> Salvar</button>
+
+</div>

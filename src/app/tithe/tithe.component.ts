@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class TitheComponent implements OnInit {
 
   titherId: string;
-  tithes$: Observable<Tithe[]>;
+  tithes$: Observable<Tithe>;
 
   constructor(private titheService: TitheService, private activateRoute: ActivatedRoute) { }
 

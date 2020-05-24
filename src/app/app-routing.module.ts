@@ -48,6 +48,7 @@ const routes: Routes = [
   },
   {
     path: 'edit-tithe/:titherId',
+    pathMatch: 'full',
     component: EditTitheComponent
   }
 ];

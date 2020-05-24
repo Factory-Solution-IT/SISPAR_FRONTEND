@@ -14,8 +14,8 @@ export class EditTitherComponent implements OnInit {
   titherId: string;
   tither$: Observable<Tither>;
 
-  constructor(private activateRoute: ActivatedRoute, 
-    private titherService: TitherService, 
+  constructor(private activateRoute: ActivatedRoute,
+    private titherService: TitherService,
     private router: Router) { }
 
   ngOnInit() {
