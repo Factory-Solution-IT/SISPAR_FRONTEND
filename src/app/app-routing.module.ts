@@ -8,6 +8,7 @@ import { AddTitheComponent } from './tithe/add-tithe/add-tithe.component';
 import { EditTitherComponent } from './tither/edit-tither/edit-tither.component';
 import { EditTitheComponent } from './tithe/edit-tithe/edit-tithe.component';
 import { DeleteTitherComponent } from './tither/delete-tither/delete-tither.component';
+import { SiginComponent } from './sigin/sigin/sigin.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,11 @@ const routes: Routes = [
     path: 'edit-tithe/:titherId',
     pathMatch: 'full',
     component: EditTitheComponent
+  },
+  {
+    path: 'sigin',
+    pathMatch: 'full',
+    component: SiginComponent
   }
 ];
 

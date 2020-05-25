@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/core/user/User';
+import { UserService } from 'src/app/core/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +12,21 @@ import { FormGroup } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user$: Observable<User>;
+  userName: string;
+
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.user$ = this.userService.getUser();
+    this.userName = this.userService.getUserName();
+    console.log(this.userName);
+  }
+
+  logout() {
+    this.userService.logout();
+    this.router.navigate(['']);
   }
 
 }

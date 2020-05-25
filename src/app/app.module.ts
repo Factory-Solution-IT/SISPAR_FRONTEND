@@ -9,6 +9,7 @@ import { TithersModule } from './tither/tithers/tithers.module';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SiginModule } from './sigin/sigin/sigin.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     HomeModule,
     ReactiveFormsModule,
-    TitheModule
+    TitheModule,
+    SiginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
