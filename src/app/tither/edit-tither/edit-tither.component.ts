@@ -67,9 +67,9 @@ export class EditTitherComponent implements OnInit {
       telephone: data.telephone,
       cellphone: data.cellphone,
       matiralStatus: parseInt(data.matiralStatus),
-      marriegeDate: data.marriegeDate,
-      nameSpouse: data.nameSpouse,
-      dateBirthSpouse: data.birthDate
+      marriegeDate: data.marriegeDate != "" ? data.marriegeDate : null,
+      nameSpouse: data.nameSpouse != "" ? data.nameSpouse : null,
+      dateBirthSpouse: data.dateBirthSpouse != "" ? data.dateBirthSpouse : null
     };
 
     // console.log(tither);
