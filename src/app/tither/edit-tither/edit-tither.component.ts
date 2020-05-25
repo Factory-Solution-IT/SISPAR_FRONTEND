@@ -27,27 +27,18 @@ export class EditTitherComponent implements OnInit {
       address: ['', [Validators.required]],
       birthDate: ['', [Validators.required]],
       CPF: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
-      cellphone: ['', [Validators.required]],
-      matiralStatus: [0, [Validators.required]],
-      marriegeDate: ['', [Validators.required]],
-      nameSpouse: ['', [Validators.required]],
-      dateBirthSpouse: ['', [Validators.required]]
+      telephone: ['', []],
+      cellphone: ['', []],
+      matiralStatus: [0, []],
+      marriegeDate: ['', []],
+      nameSpouse: ['', []],
+      dateBirthSpouse: ['', []]
     });
 
     this.titherId = this.activateRoute.snapshot.params.titherId;
     this.tither$ = this.titherService.getTitherById(this.titherId);
-    this.tither$.subscribe(data => { 
-      this.editTitherform.controls['name'].setValue(data.name);
-      this.editTitherform.controls['address'].setValue(data.address);
-      this.editTitherform.controls['birthDate'].setValue(data.birthDate);
-      this.editTitherform.controls['CPF'].setValue(data.cpf);
-      this.editTitherform.controls['telephone'].setValue(data.telephone);
-      this.editTitherform.controls['cellphone'].setValue(data.cellphone);
-      this.editTitherform.controls['matiralStatus'].setValue(data.matiralStatus);
-      this.editTitherform.controls['marriegeDate'].setValue(data.marriegeDate);
-      this.editTitherform.controls['nameSpouse'].setValue(data.nameSpouse);
-      this.editTitherform.controls['dateBirthSpouse'].setValue(data.dateBirthSpouse);
+    this.tither$.subscribe(data => {
+      this.fillForm(data);
       // console.log(data);
     }, err => {
       console.log(err);
@@ -55,10 +46,23 @@ export class EditTitherComponent implements OnInit {
     });
   }
 
-  editTither(){
+  fillForm(tither: Tither) {
+    this.editTitherform.controls['name'].setValue(tither.name);
+    this.editTitherform.controls['address'].setValue(tither.address);
+    this.editTitherform.controls['birthDate'].setValue(tither.birthDate);
+    this.editTitherform.controls['CPF'].setValue(tither.cpf);
+    this.editTitherform.controls['telephone'].setValue(tither.telephone);
+    this.editTitherform.controls['cellphone'].setValue(tither.cellphone);
+    this.editTitherform.controls['matiralStatus'].setValue(tither.matiralStatus);
+    this.editTitherform.controls['marriegeDate'].setValue(tither.marriegeDate);
+    this.editTitherform.controls['nameSpouse'].setValue(tither.nameSpouse);
+    this.editTitherform.controls['dateBirthSpouse'].setValue(tither.dateBirthSpouse);
+  }
+
+  editTither() {
     const data = this.editTitherform.getRawValue();
     // console.log(data);
-    const tither : Tither =  {
+    const tither: Tither = {
       id: this.titherId,
       name: data.name,
       address: data.address,
@@ -74,7 +78,7 @@ export class EditTitherComponent implements OnInit {
 
     // console.log(tither);
     this.titherService.editTither(tither).subscribe(data => {
-      // console.log(data);
+       console.log(data);
       this.router.navigate(['/tithers']);
     }, err => {
       console.log(err);

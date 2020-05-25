@@ -21,12 +21,12 @@ export class AddTitherComponent implements OnInit {
       address: ['', [Validators.required]],
       birthDate: ['', [Validators.required]],
       CPF: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
-      cellphone: ['', [Validators.required]],
-      matiralStatus: [0, [Validators.required]],
-      marriegeDate: ['', [Validators.required]],
-      nameSpouse: ['', [Validators.required]],
-      dateBirthSpouse: ['', [Validators.required]]
+      telephone: ['', []],
+      cellphone: ['', []],
+      matiralStatus: [0, []],
+      marriegeDate: ['', []],
+      nameSpouse: ['', []],
+      dateBirthSpouse: ['', []]
     });
   }
 
@@ -47,10 +47,15 @@ export class AddTitherComponent implements OnInit {
       dateBirthSpouse: data.dateBirthSpouse != "" ? data.dateBirthSpouse : null
     };
 
-    console.log(tither);
+    // console.log(tither);
     this.titherService.postTither(tither).subscribe(data => {
       console.log(data);
       this.router.navigate(['/tithers']);
+    }, err => {
+      console.log(err.error.errors);
+      err.error.errors.forEach(element => {
+        console.log(element.Message);
+      });
     })
 
   }
