@@ -41,7 +41,7 @@ export class AddTitherComponent implements OnInit {
       cpf: data.CPF,
       telephone: data.telephone,
       cellphone: data.cellphone,
-      matiralStatus: data.matiralStatus.getRawValue,
+      matiralStatus: parseInt(data.matiralStatus),
       marriegeDate: data.marriegeDate,
       nameSpouse: data.nameSpouse,
       dateBirthSpouse: data.birthDate

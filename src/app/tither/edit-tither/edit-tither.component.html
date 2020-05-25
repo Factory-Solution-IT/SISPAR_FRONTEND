@@ -15,91 +15,95 @@
 
   <br><br>
 
-  <div  *ngIf="(tither$ | async) as tither">
 
-    <div class="form-row">
-      <div class="col">
-        <label for="inputName">Nome</label>
-        <input type="text" formControlName="name" class="form-control" value="{{ tither.name }}" placeholder="Nome">
+  <form [formGroup]="editTitherform" (submit)="editTither()">
+
+    <div *ngIf="(tither$ | async) as tither">
+      <div class="form-row">
+        <div class="col">
+          <label for="inputName">Nome</label>
+          <input type="text" formControlName="name" class="form-control"  value="{{ tither.name }}" placeholder="Nome">
+        </div>
       </div>
+
+      <!--Address Tither-->
+      <div class="form-row">
+        <div class="col">
+          <label for="inputAddress">Endereço</label>
+          <input type="text" formControlName="address" class="form-control" value="{{ tither.address }}">
+        </div>
+      </div>
+
+      <div class="form-row">
+
+        <!--BirthDate Tither-->
+        <div class="col">
+          <label for="inputBirthDate">Data de Aniversário</label>
+          <input type="date" formControlName="birthDate" class="form-control" value="{{ tither.birthDate | date:'yyyy-MM-dd' }}">
+        </div>
+
+        <!--Document Tither-->
+        <div class="col">
+          <label for="inputCPF">CPF</label>
+          <input type="text" formControlName="CPF" class="form-control" value="{{ tither.cpf }}">
+        </div>
+
+        <div class="col">
+          <label for="inputTelephone">Telefone</label>
+          <input type="text" formControlName="telephone" class="form-control" value="{{ tither.telephone }}" id="inputTelephone" placeholder="(00) 0000-000">
+        </div>
+
+        <div class="col">
+          <label for="inputCellphone">Celular</label>
+          <input type="text" formControlName="cellphone" class="form-control" value="{{ tither.cellphone }}" id="inputCellphone" placeholder="(00) 0.0000-000">
+        </div>
+      </div>
+
+      <!--FormRow for the matiral status-->
+      <div class="form-row">
+        <div class="col">
+          <label for="inputMatiralStatus">Estado Civil</label>
+          <select formControlName="matiralStatus" id="inputMatiralStatus" class="form-control">
+            <option value = 0 >Choose...</option>
+            <option value = 1 [selected]="tither.matiralStatus == 1">Solteiro</option>
+            <option value = 2 [selected]="tither.matiralStatus == 2">Casado</option>
+            <option value = 3 [selected]="tither.matiralStatus == 3">Viuvo</option>
+            <option value = 4 [selected]="tither.matiralStatus == 4">Divorciado</option>
+          </select>
+        </div>
+      <div class="col">
+        <label for="inputMarriegeDate">Data de Casamento</label>
+        <input type="date" formControlName="marriegeDate" class="form-control" value="{{ tither.marriegeDate | date:'yyyy-MM-dd' }}" id="inputMarriegeDate" placeholder="Data de Casamento">
+      </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="inputNameSpouse">Nome Esposa(a)</label>
+          <input type="text" formControlName="nameSpouse" class="form-control" value="{{ tither.nameSpouse }}">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="inputDateBirthSpouse">Data Nascimento Esposa(o)</label>
+          <input type="date" formControlName="dateBirthSpouse" class="form-control"
+            value="{{ tither.dateBirthSpouse | date:'yyyy-MM-dd' }}">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+      </div>
+      <br>
+      <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
+        Cancelar
+      </a>
+      <button class="btn btn-outline-primary"><i class="far fa-save"></i> Salvar</button>
     </div>
-
-    <!--Address Tither-->
-    <div class="form-row">
-      <div class="col">
-        <label for="inputAddress">Endereço</label>
-        <input type="text" formControlName="address" class="form-control" value="{{ tither.address }}">
-      </div>
-    </div>
-
-    <div class="form-row">
-
-      <!--BirthDate Tither-->
-      <div class="col">
-        <label for="inputBirthDate">Data de Aniversário</label>
-        <input type="date" formControlName="birthDate" class="form-control" value="{{ tither.birthDate }}">
-      </div>
-
-    <!--Document Tither-->
-      <div class="col">
-        <label for="inputCPF">CPF</label>
-        <input type="text" formControlName="CPF" class="form-control" value= "{{ tither.cpf }}">
-      </div>
-
-      <!--Telephone Tither-->
-      <div class="col">
-        <label for="inputTelephone">Telefone</label>
-        <input type="text" formControl="telephone" class="form-control" value="{{ tither.telephone }}">
-      </div>
-
-      <div class="col">
-        <label for="inputCellphone">Celular</label>
-        <input type="text" formControl="cellphone" class="form-control" value="{{ tither.cellphone}}">
-      </div>
-    </div>
-
-    <!--FormRow for the matiral status-->
-    <div class="form-row">
-      <div class="col">
-        <label for="inputMatiralStatus">Estado Civil</label>
-        <select formControlName="matiralStatus" value="{{ tither.matiralStatus }}" class="form-control">
-          <option value=0 selected>Choose...</option>
-          <option value=1>Solteiro</option>
-          <option value=2>Casado</option>
-          <option value=3>Viuvo</option>
-          <option value=4>Divorciado</option>
-        </select>
-      </div>
-      <div class="col">
-        <label for="inputMarriageDate">Data de Casamento</label>
-        <input type="date" formControlName="marriageDate" class="form-control" value="{{ tither.marriegeDate }}">
-      </div>
-      <div class="col">
-      </div>
-      <div class="col">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col">
-        <label for="inputNameSpouse">Nome Esposa(a)</label>
-        <input type="text" formControlName="nameSpouse" class="form-control" value="{{ tither.nameSpouse }}">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col">
-        <label for="inputDateBirthSpouse">Data Nascimento Esposa(o)</label>
-        <input type="date" formControlName="dateBirthSpouse" class="form-control" value="{{ tither.dateBirthSpouse }}">
-     </div>
-     <div class="col">
-     </div>
-     <div class="col">
-     </div>
-     <div class="col">
-     </div>
-  </div>
-  <br>
-  <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
-    Cancelar
-  </a>
-  <button class="btn btn-outline-primary"><i class="far fa-save"></i> Salvar</button>
+  </form>
 </div>
