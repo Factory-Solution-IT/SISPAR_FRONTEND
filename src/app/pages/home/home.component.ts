@@ -7,7 +7,6 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public form: FormGroup;
 
   constructor() { }
 
