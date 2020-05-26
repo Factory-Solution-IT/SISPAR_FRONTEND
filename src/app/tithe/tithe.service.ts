@@ -32,6 +32,10 @@ export class TitheService {
     return this.http.get<Tithe>(apiUrl);
   }
 
+  editTithe(tithe: Tithe): Observable<Tithe> {
+    return this.http.put<Tithe>(`${this.url}/api/tithes`, tithe);
+  }
+
   postTithe(tithe: Tithe): Observable<Tithe>{
     return this.http.post<Tithe>(`${this.url}/api/tithes`, tithe);
     //return this.http.post<Tithe>(`${this.url}/api/tithes/bytitherid/{titherId}`, tithe);

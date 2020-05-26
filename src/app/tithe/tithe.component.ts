@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TitheService } from './tithe.service';
 import { Observable } from 'rxjs';
 import { Tithe } from './tithe';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-tithe',
@@ -14,7 +15,8 @@ export class TitheComponent implements OnInit {
   titherId: string;
   tithes$: Observable<Tithe>;
 
-  constructor(private titheService: TitheService, private activateRoute: ActivatedRoute) { }
+  constructor(private activateRoute: ActivatedRoute,
+    private titheService: TitheService ) { }
 
   ngOnInit() {
     this.titherId = this.activateRoute.snapshot.params.titherId;
