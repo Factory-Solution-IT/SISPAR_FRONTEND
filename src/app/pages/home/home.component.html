@@ -10,14 +10,14 @@
 
   <br>
   <br>
-  <label>Acesso a tela do dizimista:</label>
-  <br>
-  <!-- <button [routerLink]="['/tithers']"><i class="fas fa-user-circle"></i> Dizimistas </button> -->
-  <a [routerLink]="['/tithers']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>
-    Dizimistas
-  </a>
+  <!-- <label>Acesso a tela do dizimista:</label>
+  <br> -->
+
 
   <div *ngIf="(user$ | async) as user; else login">
+    <a [routerLink]="['/tithers']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>
+      Dizimistas
+    </a>
     <a class="mr-1">{{ username }}</a>
     <a class="btn btn-outline-primary" (click)="logout()"> <i class="fas fa-user-circle"></i>(Logout)</a>
   </div>
