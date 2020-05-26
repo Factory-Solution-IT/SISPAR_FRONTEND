@@ -30,8 +30,8 @@
     <tbody *ngIf="(tithes$ | async) as tithes">
       <tr *ngFor="let tithe of tithes">
         <th scope="row">{{ tithe.id | slice:0:8 }} </th>
-        <td>{{ tithe.dateContribution }}</td>
-        <td>{{ tithe.valueContribution }}</td>
+        <td>{{ tithe.dateContribution | date:'dd/MM/yyyy' }}</td>
+        <td>R$ {{ tithe.valueContribution | number : '1.2-2' }}</td>
         <td>
           <a [routerLink]="['/edit-tithe', titherId]" class="btn btn-outline-info">
             <i class="fas fa-edit"></i>
