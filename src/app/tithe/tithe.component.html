@@ -22,18 +22,18 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Data</th>
         <th scope="col">Valor</th>
+        <th scope="col">Data</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody *ngIf="(tithes$ | async) as tithes">
       <tr *ngFor="let tithe of tithes">
         <th scope="row">{{ tithe.id | slice:0:8 }} </th>
-        <td>{{ tithe.dateContribution | date:'dd/MM/yyyy' }}</td>
         <td>R$ {{ tithe.valueContribution | number : '1.2-2' }}</td>
+        <td>{{ tithe.dateContribution | date:'dd/MM/yyyy' }}</td>
         <td>
-          <a [routerLink]="['/edit-tithe', titherId]" class="btn btn-outline-info">
+          <a [routerLink]="['/edit-tithe', tithe.id]" class="btn btn-outline-info">
             <i class="fas fa-edit"></i>
             Editar
           </a>

@@ -1,3 +1,4 @@
+import { DeleteTitheComponent } from './tithe/delete-tithe/delete-tithe.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -50,12 +51,17 @@ const routes: Routes = [
   {
     path: 'edit-tithe/:titherId',
     pathMatch: 'full',
-    component: EditTitheComponent
+    component: EditTitheComponent,
   },
   {
     path: 'sigin',
     pathMatch: 'full',
-    component: SiginComponent
+    component: SiginComponent,
+  },
+  {
+    path: 'delete-tithe/:titherId',
+    pathMatch: 'full',
+    component: DeleteTitheComponent
   }
 ];
 

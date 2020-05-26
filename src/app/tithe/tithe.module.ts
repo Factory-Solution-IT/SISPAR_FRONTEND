@@ -1,3 +1,4 @@
+import { DeleteTitheModule } from './delete-tithe/delete-tithe.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { TitherModule } from '../tither/tither.module';
     RouterModule,
     AddTitheModule,
     EditTitheModule,
+    DeleteTitheModule,
     TitherModule,
     HttpClientModule
   ]

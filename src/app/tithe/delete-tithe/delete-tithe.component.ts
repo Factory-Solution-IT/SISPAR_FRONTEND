@@ -1,4 +1,8 @@
+import { TitheService } from './../tithe.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Tithe } from '../tithe';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-delete-tithe',
@@ -7,7 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteTitheComponent implements OnInit {
 
-  constructor() { }
+  titheId: string;
+  tithe$: Observable<Tithe>;
+
+  constructor(private activateRoute: ActivatedRoute,
+    private titheService: TitheService,
+    private router: Router) { }
 
   ngOnInit() {
   }

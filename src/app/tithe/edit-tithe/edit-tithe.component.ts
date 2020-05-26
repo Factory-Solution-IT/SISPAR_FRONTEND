@@ -13,6 +13,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 })
 export class EditTitheComponent implements OnInit {
 
+  titheId: string;
   titherId: string;
   tithe$: Observable<Tithe>;
   editTitheform: FormGroup;
@@ -25,17 +26,18 @@ export class EditTitheComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.titheId = this.activateRoute.snapshot.params.titheId;
+
     this.editTitheform = this.formBuilder.group({
       valueContribution: ['', [Validators.required]],
       dateContribution: ['', [Validators.required]]
     });
 
-    this.titherId = this.activateRoute.snapshot.params.titherId;
-    //this.titheId = this.activateRoute.snapshot.params.titheId;
-    //this.tithe$ = this.titheService.getTithesById(this.titheId);
-    this.tithe$ = this.titheService.getTithesByTitherId(this.titherId);
+    this.tithe$ = this.titheService.getTitheById(this.titheId);
 
     this.tithe$.subscribe(data => {
+      console.log(data);
+      this.titherId = data.titherId;
       this.fillForm(data);
     }, err => {
       console.log(err);
@@ -51,15 +53,15 @@ export class EditTitheComponent implements OnInit {
     const data = this.editTitheform.getRawValue();
 
     const tithe: Tithe = {
-      id: data.id,
-      titherId: data.titherId,
-      valueContribution: data.valueContribution,
+      id: this.titheId,
+      titherId: this.titherId,
+      valueContribution: parseFloat(data.valueContribution),
       dateContribution: data.dateContribution
     };
 
     this.titheService.editTithe(tithe).subscribe(data => {
       console.log(data);
-      this.router.navigate(['/tithes']);
+      this.router.navigate(['/tithe', this.titherId]);
     }, err => {
         console.log(err);
     });
