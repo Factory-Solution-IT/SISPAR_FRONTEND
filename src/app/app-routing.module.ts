@@ -49,7 +49,7 @@ const routes: Routes = [
     component: AddTitheComponent,
   },
   {
-    path: 'edit-tithe/:titherId',
+    path: 'edit-tithe/:titheId',
     pathMatch: 'full',
     component: EditTitheComponent,
   },
