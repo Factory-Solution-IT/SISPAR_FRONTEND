@@ -18,11 +18,11 @@ export class TitheService {
     //return this.http.get<Tithe[]>(`${this.url}/api/tithes/bytitherid/{titherId}`);
   }
 
-  getTithesById(idTithe: string): Observable<Tithe[]> {
+  getTitheById(titheId: string): Observable<Tithe> {
     //getTithesById(idTithe: string): Observable<Tithe>{
     //const apiUrl = `${this.url}/api/tithes/${idTithe}`;
-    const apiUrl = `${this.url}/api/tithes/bytitherid/{titherId}`;
-    return this.http.get<Tithe[]>(apiUrl);
+    const apiUrl = `${this.url}/api/tithes/${titheId}`;
+    return this.http.get<Tithe>(apiUrl);
     //return this.http.get<Tithe>(apiUrl);
   }
 
