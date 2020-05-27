@@ -59,7 +59,7 @@ const routes: Routes = [
     component: SiginComponent,
   },
   {
-    path: 'delete-tithe/:titherId',
+    path: 'delete-tithe/:titheId',
     pathMatch: 'full',
     component: DeleteTitheComponent
   }

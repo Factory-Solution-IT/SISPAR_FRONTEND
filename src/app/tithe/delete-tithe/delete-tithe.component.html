@@ -17,17 +17,17 @@
   <br><br>
 
   <div *ngIf="(tithe$ | async) as tithe">
-    <h4>Confirma a exclusão da Contribuição {{ tithe.valueContribution }} ?</h4>
+    <h4>Confirma a exclusão da Contribuição R$ {{ tithe.valueContribution | number : '1.2-2' }} do dia {{ tithe.dateContribution | date:'dd/MM/yyyy' }} ?</h4>
 
-  <br>
+    <br>
 
-  <a [routerLink]="['/tithes']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
-    Cancelar
-  </a>
+    <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
+      Cancelar
+    </a>
 
-  <button class="btn btn-outline-danger" (click)="deleteTithe()"><i class="fas fa-user-times"></i>
-    Sim, desejo excluir!
-  </button>
+    <button class="btn btn-outline-danger" (click)="deleteTithe()"><i class="fas fa-user-times"></i>
+      Sim, desejo excluir!
+    </button>
 
   </div>
 

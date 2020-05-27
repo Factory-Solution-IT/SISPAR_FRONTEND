@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DeleteTitheComponent implements OnInit {
 
   titheId: string;
+  titherId: string;
   tithe$: Observable<Tithe>;
 
   constructor(private activateRoute: ActivatedRoute,
@@ -21,14 +22,17 @@ export class DeleteTitheComponent implements OnInit {
   ngOnInit() {
     this.titheId = this.activateRoute.snapshot.params.titheId;
     this.tithe$ = this.titheService.getTitheById(this.titheId);
-    this.tithe$.subscribe(() => { }, err => {
+    this.tithe$.subscribe(data => {
+      console.log(data); 
+      this.titherId = data.titherId;
+    }, err => {
       console.log(err);
     });
   }
 
   deleteTithe() {
     this.titheService.deleteTithe(this.titheId).subscribe(() => {
-      this.router.navigate(['/tithe']);
+      this.router.navigate(['/tithe', this.titherId]);
     });
   }
 
