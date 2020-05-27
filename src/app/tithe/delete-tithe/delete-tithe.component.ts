@@ -19,6 +19,17 @@ export class DeleteTitheComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.titheId = this.activateRoute.snapshot.params.titheId;
+    this.tithe$ = this.titheService.getTitheById(this.titheId);
+    this.tithe$.subscribe(() => { }, err => {
+      console.log(err);
+    });
+  }
+
+  deleteTithe() {
+    this.titheService.deleteTithe(this.titheId).subscribe(() => {
+      this.router.navigate(['/tithe']);
+    });
   }
 
 }

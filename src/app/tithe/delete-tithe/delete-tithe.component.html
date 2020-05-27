@@ -1,3 +1,34 @@
-<p>
-  delete-tithe works!!!!!
-</p>
+<div class="container">
+
+  <br>
+
+  <h2>Apagar Contribuição</h2>
+
+  <br>
+
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
+    Home
+  </a>
+
+  <a [routerLink]="['/tithes']" class="btn btn-outline-success"><i class="fas fa-list"></i>
+    Lista de Contribuições
+  </a>
+
+  <br><br>
+
+  <div *ngIf="(tithe$ | async) as tithe">
+    <h4>Confirma a exclusão da Contribuição {{ tithe.valueContribution }} ?</h4>
+
+  <br>
+
+  <a [routerLink]="['/tithes']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
+    Cancelar
+  </a>
+
+  <button class="btn btn-outline-danger" (click)="deleteTithe()"><i class="fas fa-user-times"></i>
+    Sim, desejo excluir!
+  </button>
+
+  </div>
+
+</div>
