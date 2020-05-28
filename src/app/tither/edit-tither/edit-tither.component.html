@@ -48,6 +48,9 @@
           <input type="text" formControlName="CPF" class="form-control" value="{{ tither.cpf }}">
         </div>
 
+      </div>
+
+      <div class="form-row">
         <div class="col">
           <label for="inputTelephone">Telefone</label>
           <input type="text" formControlName="telephone" class="form-control" value="{{ tither.telephone }}" id="inputTelephone" placeholder="(00) 0000-000">
@@ -58,7 +61,6 @@
           <input type="text" formControlName="cellphone" class="form-control" value="{{ tither.cellphone }}" id="inputCellphone" placeholder="(00) 0.0000-000">
         </div>
       </div>
-
       <!--FormRow for the matiral status-->
       <div class="form-row">
         <div class="col">
@@ -71,15 +73,17 @@
             <option value = 4 [selected]="tither.matiralStatus == 4">Divorciado</option>
           </select>
         </div>
-      <div class="col">
-        <label for="inputMarriegeDate">Data de Casamento</label>
-        <input type="date" formControlName="marriegeDate" class="form-control" value="{{ tither.marriegeDate | date:'yyyy-MM-dd' }}" id="inputMarriegeDate" placeholder="Data de Casamento">
       </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="inputMarriegeDate">Data de Casamento</label>
+          <input type="date" formControlName="marriegeDate" class="form-control" value="{{ tither.marriegeDate | date:'yyyy-MM-dd' }}" id="inputMarriegeDate" placeholder="Data de Casamento">
+        </div>
+    </div>
         <div class="col">
         </div>
         <div class="col">
         </div>
-      </div>
       <div class="form-row">
         <div class="col">
           <label for="inputNameSpouse">Nome Esposa(a)</label>
