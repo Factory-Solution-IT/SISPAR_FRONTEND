@@ -1,15 +1,16 @@
-import { DeleteTitheComponent } from './tithe/delete-tithe/delete-tithe.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { TithersComponent } from './tither/tithers/tithers.component';
 import { TitheComponent } from './tithe/tithe.component';
+import { TithersComponent } from './tither/tithers/tithers.component';
 import { AddTitherComponent } from './tither/add-tither/add-tither.component';
-import { AddTitheComponent } from './tithe/add-tithe/add-tithe.component';
 import { EditTitherComponent } from './tither/edit-tither/edit-tither.component';
-import { EditTitheComponent } from './tithe/edit-tithe/edit-tithe.component';
 import { DeleteTitherComponent } from './tither/delete-tither/delete-tither.component';
+import { AddTitheComponent } from './tithe/add-tithe/add-tithe.component';
+import { EditTitheComponent } from './tithe/edit-tithe/edit-tithe.component';
 import { SiginComponent } from './sigin/sigin/sigin.component';
+import { DeleteTitheComponent } from './tithe/delete-tithe/delete-tithe.component';
+
 
 const routes: Routes = [
   {
