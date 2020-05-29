@@ -1,0 +1,29 @@
+<div class="container">
+  <br>
+
+  <h2>Apagar Dizimista</h2>
+
+  <br>
+
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
+    Home
+  </a>
+
+  <a [routerLink]="['/tithers']" class="btn btn-outline-success"><i class="fas fa-list"></i>
+    Lista Dizimistas
+  </a>
+
+  <br><br>
+
+  <div *ngIf="(tither$ | async) as tither">
+
+    <h4>Confirma a exclusão do Dizimista {{ tither.name }} ?</h4>
+
+    <br>
+
+    <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
+      Cancelar
+    </a>
+    <button class="btn btn-outline-danger" (click)="deleteTither()"><i class="fas fa-user-times"></i> Sim, desejo excluir!</button>
+  </div>
+</div>

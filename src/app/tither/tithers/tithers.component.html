@@ -1,0 +1,53 @@
+<div class="container">
+
+  <br>
+
+  <h2><i class="fas fa-user-circle"></i> Dizimistas</h2>
+
+  <br>
+
+  <a [routerLink]="['']" class="btn btn-outline-primary"><i class="fas fa-home"></i>
+    Home
+  </a>
+
+  <a [routerLink]="['/add-tither']" class="btn btn-outline-success"><i class="fas fa-plus-circle"></i>
+    Adicionar Dizimista
+  </a>
+
+  <br>
+  <br>
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="(tithers$ | async) as tithers">
+      <tr *ngFor="let tither of tithers">
+        <th scope="row">{{ tither.id | slice:0:8 }}</th>
+        <td>{{ tither.name }}</td>
+        <td>{{ tither.cpf }}</td>
+        <td>{{ tither.cellphone }}</td>
+        <td>
+          <a [routerLink]="['/tithe', tither.id]" class="btn btn-outline-primary">
+            <i class="fas fa-donate"></i>
+            Contribuições
+          </a>
+          <a [routerLink]="['/edit-tither', tither.id]" class="btn btn-outline-info">
+            <i class="fas fa-edit"></i>
+            Editar
+          </a>
+          <a [routerLink]="['/delete-tither', tither.id]" class="btn btn-outline-danger">
+            <i class="fas fa-trash-alt"></i>
+            Apagar
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

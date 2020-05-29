@@ -1,53 +1,31 @@
+import { TitheModule } from './tithe/tithe.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { TitherComponent } from './tither/tither.component';
-import { TitherService } from './tither.service';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import {
-  MatButtonModule, MatMenuModule, MatIconModule,
-  MatCardModule, MatSidenavModule, MatFormFieldModule,
-  MatInputModule, MatTooltipModule, MatToolbarModule, MatIcon
-} from '@angular/material';
-
-import { MatRadioModule } from '@angular/material/radio';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material';
+import { TithersModule } from './tither/tithers/tithers.module';
+import { RouterModule } from '@angular/router';
+import { HomeModule } from './pages/home/home.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SiginModule } from './sigin/sigin/sigin.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    TitherComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatRadioModule,
-    MatCardModule,
-    MatSidenavModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTooltipModule,
-    MatToolbarModule,
+    TithersModule,
     AppRoutingModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    RouterModule,
+    HomeModule,
+    ReactiveFormsModule,
+    TitheModule,
+    SiginModule
   ],
-  providers: [HttpClientModule, TitherService, MatDatepickerModule],
+  providers: [],
   bootstrap: [AppComponent]
 
 })
