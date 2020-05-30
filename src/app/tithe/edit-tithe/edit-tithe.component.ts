@@ -5,6 +5,7 @@ import { Tithe } from '../tithe';
 import { Observable } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-edit-tithe',
@@ -23,7 +24,8 @@ export class EditTitheComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,
     private titheService: TitheService,
     private router: Router,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private datepipe: DatePipe) { }
 
   ngOnInit() {
     this.titheId = this.activateRoute.snapshot.params.titheId;
@@ -46,7 +48,7 @@ export class EditTitheComponent implements OnInit {
 
   fillForm(tithe: Tithe) {
     this.editTitheform.controls['valueContribution'].setValue(tithe.valueContribution);
-    this.editTitheform.controls['dateContribution'].setValue(tithe.dateContribution);
+    this.editTitheform.controls['dateContribution'].setValue(this.datepipe.transform(tithe.dateContribution, 'yyyy-MM-dd') );
   }
 
   editTithe() {
@@ -60,7 +62,6 @@ export class EditTitheComponent implements OnInit {
     };
 
     this.titheService.editTithe(tithe).subscribe(data => {
-      console.log(data);
       this.router.navigate(['/tithe', this.titherId]);
     }, err => {
         console.log(err);

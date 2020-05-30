@@ -4,6 +4,7 @@ import { TitherService } from '../tithers/tither.service';
 import { Tither } from '../tithers/tither';
 import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-edit-tither',
@@ -19,7 +20,8 @@ export class EditTitherComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,
     private titherService: TitherService,
     private router: Router,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private datepipe: DatePipe) { }
 
   ngOnInit() {
     this.editTitherform = this.formBuilder.group({
@@ -49,19 +51,18 @@ export class EditTitherComponent implements OnInit {
   fillForm(tither: Tither) {
     this.editTitherform.controls['name'].setValue(tither.name);
     this.editTitherform.controls['address'].setValue(tither.address);
-    this.editTitherform.controls['birthDate'].setValue(tither.birthDate);
+    this.editTitherform.controls['birthDate'].setValue(this.datepipe.transform(tither.birthDate, 'yyyy-MM-dd'));
     this.editTitherform.controls['CPF'].setValue(tither.cpf);
     this.editTitherform.controls['telephone'].setValue(tither.telephone);
     this.editTitherform.controls['cellphone'].setValue(tither.cellphone);
     this.editTitherform.controls['matiralStatus'].setValue(tither.matiralStatus);
-    this.editTitherform.controls['marriegeDate'].setValue(tither.marriegeDate);
+    this.editTitherform.controls['marriegeDate'].setValue(this.datepipe.transform(tither.marriegeDate, 'yyyy-MM-dd'));
     this.editTitherform.controls['nameSpouse'].setValue(tither.nameSpouse);
-    this.editTitherform.controls['dateBirthSpouse'].setValue(tither.dateBirthSpouse);
+    this.editTitherform.controls['dateBirthSpouse'].setValue(this.datepipe.transform(tither.dateBirthSpouse, 'yyyy-MM-dd'));
   }
 
   editTither() {
     const data = this.editTitherform.getRawValue();
-    // console.log(data);
     const tither: Tither = {
       id: this.titherId,
       name: data.name,
@@ -78,11 +79,9 @@ export class EditTitherComponent implements OnInit {
 
     // console.log(tither);
     this.titherService.editTither(tither).subscribe(data => {
-       console.log(data);
       this.router.navigate(['/tithers']);
     }, err => {
       console.log(err);
-      // this.router.navigate(['not-found']);
     });
   }
 

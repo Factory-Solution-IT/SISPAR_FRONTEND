@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TitheModule } from './tithe/tithe.module';
 import { SiginModule } from './sigin/sigin/sigin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SiginModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
