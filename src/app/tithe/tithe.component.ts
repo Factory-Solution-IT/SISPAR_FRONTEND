@@ -20,8 +20,8 @@ export class TitheComponent implements OnInit {
 
   ngOnInit() {
     this.titherId = this.activateRoute.snapshot.params.titherId;
+    this.tithes$ = this.titheService.getTithesByTitherId(this.titherId);
     this.getTithes();
-    //this.tither$ = this.titherService.getTitherById(this.titherId);
     //this.tither$.subscribe(() => { }, err => {
     //  console.log(err);
   }
