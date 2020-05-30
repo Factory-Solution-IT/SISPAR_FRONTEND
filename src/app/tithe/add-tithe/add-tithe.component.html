@@ -2,7 +2,7 @@
 
   <br>
 
-    <h2>Adicionar Contribuição</h2>
+  <h2>Adicionar Contribuição</h2>
 
   <br>
 
@@ -12,7 +12,7 @@
 
   <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-success">
     <i class="fas fa-list"></i>
-      Lista de Contribuições
+    Lista de Contribuições
   </a>
 
   <br><br>
@@ -22,20 +22,27 @@
     <div class="form-row">
       <div class="col">
         <label for="inputValueContribution">Valor da Contribuição</label>
-        <input type="text" formControlName="valueContribution" class="form-control" id="valueContribution" placeholder="Valor De Contribuição">
+        <input type="text" formControlName="valueContribution" class="form-control" id="valueContribution"
+          placeholder="Valor De Contribuição">
       </div>
       <div class="col">
         <label for="inputContributionDate">Data de Contribuição</label>
-        <input type="date" formControlName="dateContribution" class="form-control" id="inputcontributionDate" placeholder="Data de Contribuição">
+        <input type="date" formControlName="dateContribution" class="form-control" id="inputcontributionDate"
+          placeholder="Data de Contribuição">
       </div>
     </div>
     <br>
-    <a [routerLink]="['/tithe']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
-      Cancelar
-    </a>
-    <button class="btn btn-outline-primary"> <i class="far fa-save"></i> Salvar</button>
+    <div class="form-row">
+      <div class="col">
+        <a [routerLink]="['/tithe', titherId]" class="btn btn-warning btn-block"><i class="far fa-window-close"></i>
+          Cancelar
+        </a>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary btn-block"> <i class="far fa-save"></i> Salvar</button>
+      </div>
+    </div>
 
   </form>
 
 </div>
-

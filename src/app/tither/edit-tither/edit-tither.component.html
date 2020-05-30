@@ -22,7 +22,7 @@
       <div class="form-row">
         <div class="col">
           <label for="inputName">Nome</label>
-          <input type="text" formControlName="name" class="form-control"  value="{{ tither.name }}" placeholder="Nome">
+          <input type="text" formControlName="name" class="form-control" value="{{ tither.name }}" placeholder="Nome">
         </div>
       </div>
 
@@ -39,7 +39,8 @@
         <!--BirthDate Tither-->
         <div class="col">
           <label for="inputBirthDate">Data de Aniversário</label>
-          <input type="date" formControlName="birthDate" class="form-control" value="{{ tither.birthDate | date:'yyyy-MM-dd' }}">
+          <input type="date" formControlName="birthDate" class="form-control"
+            value="{{ tither.birthDate | date:'yyyy-MM-dd' }}">
         </div>
 
         <!--Document Tither-->
@@ -53,12 +54,14 @@
       <div class="form-row">
         <div class="col">
           <label for="inputTelephone">Telefone</label>
-          <input type="text" formControlName="telephone" class="form-control" value="{{ tither.telephone }}" id="inputTelephone" placeholder="(00) 0000-000">
+          <input type="text" formControlName="telephone" class="form-control" value="{{ tither.telephone }}"
+            id="inputTelephone" placeholder="(00) 0000-000">
         </div>
 
         <div class="col">
           <label for="inputCellphone">Celular</label>
-          <input type="text" formControlName="cellphone" class="form-control" value="{{ tither.cellphone }}" id="inputCellphone" placeholder="(00) 0.0000-000">
+          <input type="text" formControlName="cellphone" class="form-control" value="{{ tither.cellphone }}"
+            id="inputCellphone" placeholder="(00) 0.0000-000">
         </div>
       </div>
       <!--FormRow for the matiral status-->
@@ -66,24 +69,20 @@
         <div class="col">
           <label for="inputMatiralStatus">Estado Civil</label>
           <select formControlName="matiralStatus" id="inputMatiralStatus" class="form-control">
-            <option value = 0 >Choose...</option>
-            <option value = 1 [selected]="tither.matiralStatus == 1">Solteiro</option>
-            <option value = 2 [selected]="tither.matiralStatus == 2">Casado</option>
-            <option value = 3 [selected]="tither.matiralStatus == 3">Viuvo</option>
-            <option value = 4 [selected]="tither.matiralStatus == 4">Divorciado</option>
+            <option value=0>Selecione...</option>
+            <option value=1 [selected]="tither.matiralStatus == 1">Solteiro</option>
+            <option value=2 [selected]="tither.matiralStatus == 2">Casado</option>
+            <option value=3 [selected]="tither.matiralStatus == 3">Viuvo</option>
+            <option value=4 [selected]="tither.matiralStatus == 4">Divorciado</option>
           </select>
         </div>
-      </div>
-      <div class="form-row">
         <div class="col">
           <label for="inputMarriegeDate">Data de Casamento</label>
-          <input type="date" formControlName="marriegeDate" class="form-control" value="{{ tither.marriegeDate | date:'yyyy-MM-dd' }}" id="inputMarriegeDate" placeholder="Data de Casamento">
-        </div>
-    </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
+          <input type="date" formControlName="marriegeDate" class="form-control"
+            value="{{ tither.marriegeDate | date:'yyyy-MM-dd' }}" id="inputMarriegeDate"
+            placeholder="Data de Casamento">
+        </div>        
+      </div>
       <div class="form-row">
         <div class="col">
           <label for="inputNameSpouse">Nome Esposa(a)</label>
@@ -98,16 +97,18 @@
         </div>
         <div class="col">
         </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
       </div>
       <br>
-      <a [routerLink]="['/tithers']" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
-        Cancelar
-      </a>
-      <button class="btn btn-outline-primary"><i class="far fa-save"></i> Salvar</button>
+      <div class="form-row">
+        <div class="col">
+          <a [routerLink]="['/tithers']" class="btn btn-warning btn-block"><i class="far fa-window-close"></i>
+            Cancelar
+          </a>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary btn-block"><i class="far fa-save"></i> Salvar</button>
+        </div>
+      </div>
     </div>
   </form>
 </div>
