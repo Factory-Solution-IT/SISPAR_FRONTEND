@@ -1,6 +1,11 @@
 name: scp files
 on: [push]
 
+env:
+  AZURE_WEBAPP_NAME: sispar    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './dist/sispar-app'      # set this to the path to your web app project
+  NODE_VERSION: '12.x'                # set this to the node version to use
+  
 jobs:
   build:
  
@@ -8,17 +13,12 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1 #this installs node and npm for us
+    - uses: actions/checkout@master
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
- 
-    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+        node-version: ${{ env.NODE_VERSION }}
+    - name: npm install and build
  
     - run: npm install
     - run: npm install -g @angular/cli > /dev/null
@@ -35,3 +35,4 @@ jobs:
         source: "./dist/sispar-app/"
         target: "./"
         strip_components: 3 # this is important
+ 
