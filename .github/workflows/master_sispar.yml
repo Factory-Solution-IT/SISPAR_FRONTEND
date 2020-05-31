@@ -30,7 +30,7 @@ jobs:
         HOST: ftp.site4now.net
         USERNAME: flpsno
         PORT: 21
-	PASSWORD: metal001
+        PASSWORD: metal001
       with:
         source: "./dist/sispar-app/"
         target: "./"
