@@ -1,9 +1,7 @@
-on:
-  push:
-    branches:
-      - develop
- 
+name: scp files
+on: [push]
 jobs:
+
   build:
  
     # using Ubuntu
