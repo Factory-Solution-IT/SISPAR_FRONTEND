@@ -1,25 +1,16 @@
 import { DeleteTitheModule } from './delete-tithe/delete-tithe.module';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TitheComponent } from './tithe.component';
 import { AddTitheModule } from './add-tithe/add-tithe.module';
 import { EditTitheModule } from './edit-tithe/edit-tithe.module';
-import { TitherModule } from '../tither/tither.module';
+import { TithesModule } from './tithes/tithes.module';
 
 @NgModule({
-  declarations: [
-    TitheComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule,
-    RouterModule,
+    TithesModule,
     AddTitheModule,
     EditTitheModule,
-    DeleteTitheModule,
-    TitherModule,
-    HttpClientModule
+    DeleteTitheModule
   ]
 })
 export class TitheModule { }

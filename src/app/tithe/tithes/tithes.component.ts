@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { TitheService } from './tithe.service';
+import { TitheService } from './../tithe.service';
 import { Observable } from 'rxjs';
-import { Tithe } from './tithe';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Tithe } from './../tithe';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-tithe',
-  templateUrl: './tithe.component.html',
-  styleUrls: ['./tithe.component.css']
+  selector: 'app-tithes',
+  templateUrl: './tithes.component.html',
+  styleUrls: ['./tithes.component.css']
 })
-export class TitheComponent implements OnInit {
+export class TithesComponent implements OnInit {
 
   titherId: string;
   tithes$: Observable<Tithe>;

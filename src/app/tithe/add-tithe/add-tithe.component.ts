@@ -43,7 +43,7 @@ export class AddTitheComponent implements OnInit {
 
      this.titheService.postTithe(tithe).subscribe(data => {
        console.log(data);
-       this.router.navigate(['/tithe', this.titherId]);
+       this.router.navigate(['/tithes', this.titherId]);
      }, err => {
        console.log(err);
      });

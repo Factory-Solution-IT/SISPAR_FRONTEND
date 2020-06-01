@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TitherService } from './tither.service';
-import { Tither } from './tither';
+import { TitherService } from '../tither.service';
+import { Tither } from '../tither';
 import { Observable } from 'rxjs';
 
 @Component({
