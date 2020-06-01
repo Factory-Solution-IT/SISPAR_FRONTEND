@@ -11,6 +11,7 @@ import { TitheModule } from './tithe/tithe.module';
 import { SiginModule } from './sigin/sigin/sigin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
     TitheModule,
     SiginModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CoreModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
