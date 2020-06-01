@@ -10,7 +10,7 @@
     Home
   </a>
 
-  <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-success"><i class="fas fa-list"></i>
+  <a [routerLink]="['/tithes', titherId]" class="btn btn-outline-success"><i class="fas fa-list"></i>
     Lista Dizimistas
   </a>
 
@@ -35,10 +35,16 @@
       </div>
     </div>
     <br>
-    <a [routerLink]="['/tithe', titherId]" class="btn btn-outline-warning"><i class="far fa-window-close"></i>
-      Cancelar
-    </a>
-    <button class="btn btn-outline-primary"><i class="far fa-save"></i> Salvar</button>
+    <div class="form-row">
+      <div class="col">
+        <a [routerLink]="['/tithes', titherId]" class="btn btn-warning btn-block"><i class="far fa-window-close"></i>
+          Cancelar
+        </a>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary btn-block"> <i class="far fa-save"></i> Salvar</button>
+      </div>
+    </div>
   </form>
 
 </div>

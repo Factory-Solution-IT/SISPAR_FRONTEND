@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TitherService } from '../tithers/tither.service';
-import { Tither } from '../tithers/tither';
+import { TitherService } from '../tither.service';
+import { Tither } from '../tither';
 import { Observable } from 'rxjs';
 
 @Component({

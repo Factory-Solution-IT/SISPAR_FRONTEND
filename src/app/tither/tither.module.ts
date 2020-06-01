@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TitherComponent } from './tither.component';
-import { HttpClientModule } from '@angular/common/http';
+import { TithersModule } from './tithers/tithers.module';
+import { AddTitherModule } from './add-tither/add-tither.module';
+import { EditTitherModule } from './edit-tither/edit-tither.module';
+import { DeleteTitherModule } from './delete-tither/delete-tither.module';
 
 @NgModule({
-  declarations: [TitherComponent],
+  declarations: [],
   imports: [
-    CommonModule
+    TithersModule,
+    AddTitherModule,
+    EditTitherModule,
+    DeleteTitherModule
   ]
 })
 export class TitherModule { }

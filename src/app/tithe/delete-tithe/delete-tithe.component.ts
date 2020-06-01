@@ -32,7 +32,7 @@ export class DeleteTitheComponent implements OnInit {
 
   deleteTithe() {
     this.titheService.deleteTithe(this.titheId).subscribe(() => {
-      this.router.navigate(['/tithe', this.titherId]);
+      this.router.navigate(['/tithes', this.titherId]);
     });
   }
 

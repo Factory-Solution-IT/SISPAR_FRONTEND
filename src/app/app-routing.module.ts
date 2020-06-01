@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { TitheComponent } from './tithe/tithe.component';
 import { TithersComponent } from './tither/tithers/tithers.component';
 import { AddTitherComponent } from './tither/add-tither/add-tither.component';
 import { EditTitherComponent } from './tither/edit-tither/edit-tither.component';
@@ -10,6 +9,7 @@ import { AddTitheComponent } from './tithe/add-tithe/add-tithe.component';
 import { EditTitheComponent } from './tithe/edit-tithe/edit-tithe.component';
 import { SiginComponent } from './sigin/sigin/sigin.component';
 import { DeleteTitheComponent } from './tithe/delete-tithe/delete-tithe.component';
+import { TithesComponent } from './tithe/tithes/tithes.component';
 
 
 const routes: Routes = [
@@ -23,9 +23,9 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'tithe/:titherId',
+    path: 'tithes/:titherId',
     pathMatch: 'full',
-    component: TitheComponent
+    component: TithesComponent
   },
   {
     path: 'tithers',

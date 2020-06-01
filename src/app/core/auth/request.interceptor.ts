@@ -13,11 +13,11 @@ intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpSentEvent | HttpHeaderResponse
     | HttpProgressEvent | HttpResponse<any>
     | HttpUserEvent<any>> {
-        console.log(`token RequestInterceptor`);
+        //console.log(`token RequestInterceptor`);
 
         if (this.tokenSerice.hasToken()) {
             const token = this.tokenSerice.getToken();
-            console.log(`token encontrado ${token}`);
+            //console.log(`token encontrado ${token}`);
             req = req.clone(
                 {
                     setHeaders: {

@@ -38,7 +38,7 @@ export class EditTitheComponent implements OnInit {
     this.tithe$ = this.titheService.getTitheById(this.titheId);
 
     this.tithe$.subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.titherId = data.titherId;
       this.fillForm(data);
     }, err => {
@@ -62,7 +62,7 @@ export class EditTitheComponent implements OnInit {
     };
 
     this.titheService.editTithe(tithe).subscribe(data => {
-      this.router.navigate(['/tithe', this.titherId]);
+      this.router.navigate(['/tithes', this.titherId]);
     }, err => {
         console.log(err);
     });

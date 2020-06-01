@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Tither } from '../tithers/tither';
-import { TitherService } from '../tithers/tither.service';
+import { Tither } from '../tither';
+import { TitherService } from '../tither.service';
 import { Router } from '@angular/router';
 
 @Component({
