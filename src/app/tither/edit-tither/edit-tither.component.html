@@ -32,6 +32,17 @@
           <label for="inputAddress">Endereço</label>
           <input type="text" formControlName="address" class="form-control" value="{{ tither.address }}">
         </div>
+        <div class="col">
+          <label for="inputAddressNumber">Número</label>
+          <input type="text" formControlName="addressNumber" class="form-control" value="{{ tither.addressNumber }}">
+        </div>
+      </div>
+
+      <div calss="form-row">
+        <div class="col">
+          <label for="inputAddressComplement">Complemento</label>
+          <input type="text" formControlName="addressComplement" class="form-control" value="{{ tither.addressComplement }}">
+        </div>
       </div>
 
       <div class="form-row">
@@ -81,7 +92,7 @@
           <input type="date" formControlName="marriegeDate" class="form-control"
             value="{{ tither.marriegeDate | date:'yyyy-MM-dd' }}" id="inputMarriegeDate"
             placeholder="Data de Casamento">
-        </div>        
+        </div>
       </div>
       <div class="form-row">
         <div class="col">

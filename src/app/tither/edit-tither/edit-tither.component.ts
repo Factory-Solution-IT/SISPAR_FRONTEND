@@ -1,3 +1,4 @@
+import { EditTitheComponent } from './../../tithe/edit-tithe/edit-tithe.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TitherService } from '../tither.service';
@@ -27,6 +28,12 @@ export class EditTitherComponent implements OnInit {
     this.editTitherform = this.formBuilder.group({
       name: ['', [Validators.required]],
       address: ['', [Validators.required]],
+      addressNumber: [0, []],
+      addressComplement: ['', [Validators.required]],
+      zipCode: ['', [Validators.required]],
+      neighborhood: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
       birthDate: ['', [Validators.required]],
       CPF: ['', [Validators.required]],
       telephone: ['', []],
@@ -51,6 +58,12 @@ export class EditTitherComponent implements OnInit {
   fillForm(tither: Tither) {
     this.editTitherform.controls['name'].setValue(tither.name);
     this.editTitherform.controls['address'].setValue(tither.address);
+    this.editTitherform.controls['addressNumber'].setValue(tither.addressNumber);
+    this.editTitherform.controls['addressComplement'].setValue(tither.addressComplement);
+    this.editTitherform.controls['zipCode'].setValue(tither.zipCode);
+    this.editTitherform.controls['neighborhood'].setValue(tither.neighborhood);
+    this.editTitherform.controls['city'].setValue(tither.city);
+    this.editTitherform.controls['state'].setValue(tither.state);
     this.editTitherform.controls['birthDate'].setValue(this.datepipe.transform(tither.birthDate, 'yyyy-MM-dd'));
     this.editTitherform.controls['CPF'].setValue(tither.cpf);
     this.editTitherform.controls['telephone'].setValue(tither.telephone);
@@ -67,6 +80,12 @@ export class EditTitherComponent implements OnInit {
       id: this.titherId,
       name: data.name,
       address: data.address,
+      addressNumber: data.addressNumber,
+      addressComplement: data.addressComplement,
+      zipCode: data.zipCode,
+      neighborhood: data.neighborhood,
+      city: data.city,
+      state: data.state,
       birthDate: data.birthDate,
       cpf: data.CPF,
       telephone: data.telephone,
