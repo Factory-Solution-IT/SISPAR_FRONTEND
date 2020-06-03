@@ -28,7 +28,7 @@ export class EditTitherComponent implements OnInit {
     this.editTitherform = this.formBuilder.group({
       name: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      addressNumber: [0, []],
+      addressNumber: ['', [Validators.required]],
       addressComplement: ['', [Validators.required]],
       zipCode: ['', [Validators.required]],
       neighborhood: ['', [Validators.required]],
