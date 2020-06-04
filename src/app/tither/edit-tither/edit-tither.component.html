@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div calss="form-row">
+      <div class="form-row">
         <div class="col">
           <label for="inputAddressComplement">Complemento</label>
           <input type="text" formControlName="addressComplement" class="form-control" value="{{ tither.addressComplement }}">
@@ -46,6 +46,24 @@
         <div class="col">
           <label for="inputZipCode">CEP</label>
           <input type="text" formControlName="zipCode" class="form-control" value="{{ tither.zipCode }}">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="inputNeighborhood">Bairro</label>
+          <input type="text" formControlName="neighborhood" class="form-control" value="{{ tither.neighborhood}}">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="inputCity">Cidade</label>
+          <input type="text" formControlName="city" class="form-control" value="{{ tither.city}}">
+        </div>
+        <div class="col">
+          <label for="inputState">Estado</label>
+          <input type="text" formControlName="state" class="form-control" value="{{ tither.state }}">
         </div>
       </div>
 
