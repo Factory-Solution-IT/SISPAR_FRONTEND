@@ -29,7 +29,7 @@ export class TitheService {
 
   editTithe(tithe: Tithe): Observable<Tithe> {
     return this.http.put<Tithe>(
-      `${this.url}/api/tithes`, 
+      `${this.url}/api/tithes/${tithe.id}`, 
       tithe
     );
   }
