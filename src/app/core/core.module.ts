@@ -5,15 +5,18 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatList, MatListModule } from '@angular/material/list';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ],
   exports: [
       HeaderComponent,
-      FooterComponent
+      FooterComponent,
+      NavComponent
   ],
   imports: [
     CommonModule,
