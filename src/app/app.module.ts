@@ -1,3 +1,6 @@
+import { FooterComponent } from './core/footer/footer.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderComponent } from './core/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,6 +17,9 @@ import { DatePipe } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { TitherModule } from './tither/tither.module';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,7 +34,10 @@ import { TitherModule } from './tither/tither.module';
     SiginModule,
     BrowserAnimationsModule,
     CoreModule,
-    TitherModule
+    TitherModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

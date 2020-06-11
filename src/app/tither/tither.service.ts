@@ -31,7 +31,7 @@ export class TitherService {
 
   editTither(tither: Tither): Observable<Tither> {
     return this.http.put<Tither>(
-      `${this.url}/api/tithers`,
+      `${this.url}/api/tithers/${tither.id}`,
       tither
     );
   }
