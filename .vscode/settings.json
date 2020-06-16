@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/04439c44-79c1-468e-8a14-86fa0b747bf3/resourceGroups/SisparFront/providers/Microsoft.Web/sites/sispar",
+    "appService.deploySubpath": "dist\\sispar-app"
+}
