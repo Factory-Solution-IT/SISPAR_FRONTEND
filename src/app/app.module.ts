@@ -19,6 +19,7 @@ import { TitherModule } from './tither/tither.module';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatListModule } from '@angular/material/list';
     TitherModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

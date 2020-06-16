@@ -6,9 +6,19 @@
 
   <br>
   <br>
-  <!-- <label>Acesso a tela do dizimista:</label>
-  <br> -->
+<mat-card class="home mat-elevation-z3">
+  <mat-card-title class="title">
+    Bem Vindo!
+  </mat-card-title>
 
+  <mat-card-subtitle class="subtitle">
+    SISPAR - Sistema Integrado para Paróquias
+  </mat-card-subtitle>
+
+</mat-card>
+
+  <br>
+  <br>
 
   <div *ngIf="(user$ | async) as user; else login">
     <a [routerLink]="['/tithers']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>

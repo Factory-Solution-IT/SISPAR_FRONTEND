@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from 'src/app/core/auth/request.interceptor';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { RequestInterceptor } from 'src/app/core/auth/request.interceptor';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: RequestInterceptor,
-    multi: true    
+    multi: true
   }]
 })
 export class HomeModule { }
