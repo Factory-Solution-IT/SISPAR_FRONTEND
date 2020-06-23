@@ -6,12 +6,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatList, MatListModule } from '@angular/material/list';
 import { NavComponent } from './nav/nav.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
   ],
   exports: [
       HeaderComponent,
@@ -22,7 +23,8 @@ import { NavComponent } from './nav/nav.component';
     CommonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    RouterModule
   ]
 })
 
