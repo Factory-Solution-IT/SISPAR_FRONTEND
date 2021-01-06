@@ -1,39 +1,10 @@
-<div class="container">
-
-  <br>
-
-  <h2>Home</h2>
-
-  <br>
-  <br>
 <mat-card class="home mat-elevation-z3">
+
   <mat-card-title class="title">
     Bem Vindo!
   </mat-card-title>
-
   <mat-card-subtitle class="subtitle">
     SISPAR - Sistema Integrado para Paróquias
   </mat-card-subtitle>
 
 </mat-card>
-
-  <br>
-  <br>
-
-  <div *ngIf="(user$ | async) as user; else login">
-    <a [routerLink]="['/tithers']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>
-      Dizimistas
-    </a>
-    <a class="mr-1">{{ userName }}</a>
-    <a class="btn btn-outline-primary" (click)="logout()"> <i class="fas fa-user-circle"></i>(Logout)</a>
-  </div>
-
-  <ng-template #login>
-    <a [routerLink]="['/sigin']" class="btn btn-outline-primary"> <i class="fas fa-user-circle"></i>
-      Login
-    </a>
-    <!-- <span class="navbar-text">
-        <a [routerLink]="['']">Please, login!</a>
-    </span> -->
-  </ng-template>
-</div>

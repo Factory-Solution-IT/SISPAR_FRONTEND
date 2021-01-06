@@ -1,17 +1,14 @@
-.mat-toolbar {
-  color: white;
-  background-color: blueviolet;
-}
 .header{
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  background-color: blueviolet;
 }
 
 .header a {
   display: flex;
   align-items:center;
   text-decoration: none;
+  color: #fff;
 }
 
 .header .title-group{
@@ -19,5 +16,7 @@
 }
 
 .header .title-group{
-  padding-right: 5px;
+  padding-right: 20px;
 }
+
+

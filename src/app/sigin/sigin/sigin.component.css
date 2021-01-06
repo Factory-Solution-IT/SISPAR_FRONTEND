@@ -1,0 +1,10 @@
+.mat-card-title {
+  font-size: 20px;
+  text-align:left;
+}
+
+button {
+  background-color: blueviolet;
+  font-size: 15px;
+  color: white;
+}
